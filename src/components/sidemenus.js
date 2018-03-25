@@ -2,33 +2,45 @@ import React from 'react';
 import { Menu, Icon, Modal } from 'antd';
 
 export default class SideMenus extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			visible: false
+		}
+	}
 
-	state = { visible: false }
-	showModal = () => {
-		this.setState({
-			visible: true,
-		});
+
+	showModal = (e) => {
+		if(e.key === '1'){
+			this.setState({
+				visible: true
+			});
+		}
 	}
 	handleOk = (e) => {
+		e.stopPropagation();
+		console.log('OK');
 		console.log(e);
 		this.setState({
-			visible: false,
+			visible: false
 		});
 	}
 	handleCancel = (e) => {
+		e.stopPropagation();
+		console.log('Cancel');
 		console.log(e);
 		this.setState({
-			visible: false,
+			visible: false
 		});
 	}
 	render(){
 		return (
-			<Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-				<Menu.Item key="1" onClick={this.showModal}>
+			<Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} onClick={this.showModal}>
+				<Menu.Item key="1" >
 					<Icon type="user" />
 					<span className="nav-text">Login</span>
 					<Modal
-						title="Basic Modal"
+						title="Login"
 						visible={this.state.visible}
 						onOk={this.handleOk}
 						onCancel={this.handleCancel}
