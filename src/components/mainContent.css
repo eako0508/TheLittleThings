@@ -2,4 +2,11 @@
 	padding: 24;
 	background-color: #fff;
 	min-height: 360px;
+	justify-content: flex-end;
+}
+.friendCards {
+	display: inline-block;
+}
+.friendAvatar {
+	min-height: 297px;
 }

@@ -13,6 +13,7 @@ export default class SideMenus extends React.Component {
 
 
 	showModal = (e) => {
+
 		if(e.key === '1'){
 			this.setState({
 				loginVisible: true
@@ -62,8 +63,8 @@ export default class SideMenus extends React.Component {
 			<Menu theme="dark" mode="inline" onClick={this.showModal}>
 				<Menu.Item key="1" >
 					<Icon type="user" />
-					<span className="nav-text">Login</span>
-					<Modal
+					<span className="nav-text">Logout</span>
+					{/*<Modal
 					title="Login"
 					visible={this.state.loginVisible}
 					onCancel={this.handleLoginCancel}
@@ -77,8 +78,8 @@ export default class SideMenus extends React.Component {
 					onCancel={this.handleRegisterCancel}
 					onOk={this.handleRegisterOk}
 					>
-						{/*<RegisterForm onClick={this.handleRegisterBtn} />*/}
-					</Modal>
+						<RegisterForm onClick={this.handleRegisterBtn} />
+					</Modal>*/}
 				</Menu.Item>
 				<Menu.Item key="2">
 					<Icon type="video-camera" />

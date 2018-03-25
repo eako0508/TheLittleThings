@@ -1,15 +1,16 @@
 import React from 'react';
 import './mainContent.css';
-import { Avatar } from 'antd';
+import { Avatar, Card, Icon } from 'antd';
+const { Meta } = Card;
 
 export default class MainContent extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			friends: [
-				{ name: 'Josh' },
-				{ name: 'Isaac' },
-				{ name: 'Ryan' }
+				{ name: 'Josh', description: 'he\'s alright' },
+				{ name: 'Isaac', description: 'crys alot' },
+				{ name: 'Ryan', description: 'real player' }
 			]
 		}
 	}
@@ -19,18 +20,54 @@ export default class MainContent extends React.Component {
 	render(){
 		return (
 			<div className='body-content-div'>
-				<div>
-					<Avatar shape='square' size='large' icon='user' />
-					name: {this.state.friends[0].name}
-				</div>
-				<div>
-					<Avatar shape='square' size='large' icon='user' />
-					name: {this.state.friends[1].name}
-				</div>
-				<div>
-					<Avatar shape='square' size='large' icon='user' />
-					name: {this.state.friends[2].name}
-				</div>
+				<Card
+				hoverable
+				style={{ width: 240 }}
+				cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+				className='friendCards'
+				>
+					<Meta
+					title="Jessica"
+					description="Cool girl"
+					/>
+				</Card>
+				<Card
+				hoverable
+				style={{ width: 240 }}
+				cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
+				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+				className='friendCards'
+				>
+					<Meta
+					title={this.state.friends[0].name}
+					description={this.state.friends[0].description}
+					/>
+				</Card>
+				<Card
+				hoverable
+				style={{ width: 240 }}
+				cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
+				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+				className='friendCards'
+				>
+					<Meta
+					title={this.state.friends[1].name}
+					description={this.state.friends[1].description}
+					/>
+				</Card>
+				<Card
+				hoverable
+				style={{ width: 240 }}
+				cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
+				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+				className='friendCards'
+				>
+					<Meta
+					title={this.state.friends[2].name}
+					description={this.state.friends[2].description}
+					/>
+				</Card>
 			</div>
 		);
 	}
