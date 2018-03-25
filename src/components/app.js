@@ -1,6 +1,6 @@
 import React from 'react';
 import SideMenus from './sidemenus';
-import MainContent from './mainContent';
+import MainBody from './mainBody';
 import './app.css';
 import { Layout, Menu, Icon } from 'antd';
 const { Sider } = Layout;
@@ -22,7 +22,7 @@ export default class App extends React.Component {
 					</div>
 					<SideMenus />
 				</Sider>
-				<MainContent />
+				<MainBody />
 			</Layout>
 		);
 	}

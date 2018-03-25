@@ -1,11 +1,13 @@
 import React from 'react';
 import { Menu, Icon, Modal } from 'antd';
+import LoginForm from './loginForm';
 
 export default class SideMenus extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			visible: false
+			loginVisible: false,
+			registerVisible: false
 		}
 	}
 
@@ -13,24 +15,46 @@ export default class SideMenus extends React.Component {
 	showModal = (e) => {
 		if(e.key === '1'){
 			this.setState({
-				visible: true
+				loginVisible: true
 			});
 		}
 	}
-	handleOk = (e) => {
+	handleLoginOk = (e) => {
 		e.stopPropagation();
 		console.log('OK');
 		console.log(e);
 		this.setState({
-			visible: false
+			loginVisible: false
 		});
 	}
-	handleCancel = (e) => {
+	handleLoginCancel = (e) => {
 		e.stopPropagation();
 		console.log('Cancel');
 		console.log(e);
 		this.setState({
-			visible: false
+			loginVisible: false
+		});
+	}
+	handleRegisterBtn = (e) => {
+		e.stopPropagation();
+		console.log('RegisterBtn');
+		this.setState({
+			loginVisible: false,
+			registerVisible: true
+		});
+	}
+	handleRegisterOk = (e) => {
+		e.stopPropagation();
+		console.log('Register-cancel');
+		this.setState({
+			registerVisible: false
+		});
+	}
+	handleRegisterCancel = (e) => {
+		e.stopPropagation();
+		console.log('Register-cancel');
+		this.setState({
+			registerVisible: false
 		});
 	}
 	render(){
@@ -41,13 +65,19 @@ export default class SideMenus extends React.Component {
 					<span className="nav-text">Login</span>
 					<Modal
 						title="Login"
-						visible={this.state.visible}
-						onOk={this.handleOk}
-						onCancel={this.handleCancel}
+						visible={this.state.loginVisible}
+						onCancel={this.handleLoginCancel}
+						footer={null}
 						>
-						<p>Some contents...</p>
-						<p>Some contents...</p>
-						<p>Some contents...</p>
+						<LoginForm onClick={this.handleRegisterBtn} />
+					</Modal>
+					<Modal
+						title="Register"
+						visible={this.state.registerVisible}
+						onCancel={this.handleRegisterCancel}
+						onOk={this.handleRegisterOk}
+						>
+						{/*<RegisterForm onClick={this.handleRegisterBtn} />*/}
 					</Modal>
 				</Menu.Item>
 				<Menu.Item key="2">

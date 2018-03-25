@@ -1,22 +1,19 @@
 import React from 'react';
-import { Layout } from 'antd';
-const { Header, Content, Footer } = Layout;
+import './mainContent.css';
 
 export default class MainContent extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {
+
+		}
+	}
 
 	render(){
 		return (
-			<Layout>
-				<Header className='body-header' />
-				<Content className='body-content'>
-					<div className='body-content-div'>
-					content
-					</div>
-				</Content>
-				<Footer className='body-footer'>
-				BuildaPC
-				</Footer>
-			</Layout>
+			<div className='body-content-div'>
+				content
+			</div>
 		);
 	}
 }
