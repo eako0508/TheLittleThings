@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu, Icon, Modal } from 'antd';
 import LoginForm from './loginForm';
+import { Redirect } from 'react-router-dom';
 
 export default class SideMenus extends React.Component {
 	constructor(props){
@@ -18,6 +19,8 @@ export default class SideMenus extends React.Component {
 			this.setState({
 				loginVisible: true
 			});
+		} else if(e.key === '2'){
+			window.location = '/add';
 		}
 	}
 	handleLoginOk = (e) => {
@@ -62,7 +65,7 @@ export default class SideMenus extends React.Component {
 		return (
 			<Menu theme="dark" mode="inline" onClick={this.showModal}>
 				<Menu.Item key="1" >
-					<Icon type="user" />
+					<Icon type="logout" />
 					<span className="nav-text">Logout</span>
 					{/*<Modal
 					title="Login"
@@ -82,8 +85,8 @@ export default class SideMenus extends React.Component {
 					</Modal>*/}
 				</Menu.Item>
 				<Menu.Item key="2">
-					<Icon type="video-camera" />
-					<span className="nav-text">About</span>
+					<Icon type="user-add" />
+					<span className="nav-text">Add Person</span>
 				</Menu.Item>
 			</Menu>
 		);

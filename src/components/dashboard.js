@@ -15,7 +15,7 @@ export default class Dashboard extends React.Component {
 	}
 	render(){
 		return (
-			<Layout style={{ minHeight: '100vh' }}>
+			<Layout style={{ minHeight: '100vh'}}>
 				<MainBody />
 				<Sider
 				breakpoint="lg"
@@ -23,6 +23,7 @@ export default class Dashboard extends React.Component {
 				collapsed={this.state.collapsed}
 				onCollapse={this.onCollapse}
 				reverseArrow={true}
+				className='nav-sider'
 				>
 					<div className="logo">
 					</div>

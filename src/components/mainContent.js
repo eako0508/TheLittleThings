@@ -1,5 +1,6 @@
 import React from 'react';
 import './mainContent.css';
+import { Redirect } from 'react-router-dom';
 import { Avatar, Card, Icon } from 'antd';
 const { Meta } = Card;
 
@@ -15,7 +16,12 @@ export default class MainContent extends React.Component {
 		}
 	}
 
-
+	handleClickEdit = (e) => {
+		e.preventDefault();
+		console.log('Edit clicked');
+		console.log(e);
+		window.location = '/edit';
+	}
 
 	render(){
 		return (
@@ -24,7 +30,7 @@ export default class MainContent extends React.Component {
 				hoverable
 				style={{ width: 240 }}
 				cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+				actions={[<Icon type="edit" onClick={this.handleClickEdit}/>, <Icon type="ellipsis" />]}
 				className='friendCards'
 				>
 					<Meta
