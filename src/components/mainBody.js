@@ -14,7 +14,7 @@ export default class MainBody extends React.Component {
 					<MainContent />
 				</Content>
 				<Footer className='body-footer'>
-				BuildaPC
+				The Little Things
 				</Footer>
 			</Layout>
 		);

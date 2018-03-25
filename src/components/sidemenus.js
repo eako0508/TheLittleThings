@@ -59,24 +59,24 @@ export default class SideMenus extends React.Component {
 	}
 	render(){
 		return (
-			<Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} onClick={this.showModal}>
+			<Menu theme="dark" mode="inline" onClick={this.showModal}>
 				<Menu.Item key="1" >
 					<Icon type="user" />
 					<span className="nav-text">Login</span>
 					<Modal
-						title="Login"
-						visible={this.state.loginVisible}
-						onCancel={this.handleLoginCancel}
-						footer={null}
-						>
+					title="Login"
+					visible={this.state.loginVisible}
+					onCancel={this.handleLoginCancel}
+					footer={null}
+					>
 						<LoginForm onClick={this.handleRegisterBtn} />
 					</Modal>
 					<Modal
-						title="Register"
-						visible={this.state.registerVisible}
-						onCancel={this.handleRegisterCancel}
-						onOk={this.handleRegisterOk}
-						>
+					title="Register"
+					visible={this.state.registerVisible}
+					onCancel={this.handleRegisterCancel}
+					onOk={this.handleRegisterOk}
+					>
 						{/*<RegisterForm onClick={this.handleRegisterBtn} />*/}
 					</Modal>
 				</Menu.Item>

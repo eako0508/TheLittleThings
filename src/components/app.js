@@ -2,27 +2,33 @@ import React from 'react';
 import SideMenus from './sidemenus';
 import MainBody from './mainBody';
 import './app.css';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout } from 'antd';
 const { Sider } = Layout;
 
-
 export default class App extends React.Component {
-
+	state = {
+		collapsed: false
+	}
+	onCollapse = (collapsed) => {
+		console.log(collapsed);
+		this.setState({ collapsed });
+	}
 	render(){
 		return (
-			<Layout>
+			<Layout style={{ minHeight: '100vh' }}>
+				<MainBody />
 				<Sider
 				breakpoint="lg"
-				collapsedWidth="0"
-				onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+				collapsible
+				collapsed={this.state.collapsed}
+				onCollapse={this.onCollapse}
+				reverseArrow={true}
 				>
 					<div className="logo">
-						<Icon type="desktop" />
-						<a href='#'>BuildaPC</a>
 					</div>
 					<SideMenus />
 				</Sider>
-				<MainBody />
+
 			</Layout>
 		);
 	}
