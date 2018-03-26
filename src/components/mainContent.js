@@ -10,8 +10,8 @@ export default class MainContent extends React.Component {
 		this.state = {
 			friends: [
 				{ name: 'Josh', description: 'he\'s alright' },
-				{ name: 'Isaac', description: 'crys alot' },
-				{ name: 'Ryan', description: 'real player' }
+				{ name: 'Isaac', description: 'Small asian guy from office' },
+				{ name: 'Ryan', description: 'A guy from New Hampshire' }
 			]
 		}
 	}

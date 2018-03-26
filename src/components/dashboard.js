@@ -16,7 +16,7 @@ export default class Dashboard extends React.Component {
 	render(){
 		return (
 			<Layout style={{ minHeight: '100vh'}}>
-				<MainBody />
+				<MainBody displayComponent='MainContent' />
 				<Sider
 				breakpoint="lg"
 				collapsible
