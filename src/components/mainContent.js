@@ -17,10 +17,12 @@ export default class MainContent extends React.Component {
 	}
 
 	handleClickEdit = (e) => {
-		e.preventDefault();
-		console.log('Edit clicked');
-		console.log(e);
-		window.location = '/edit';
+		if(this.props.onChangeMenu){
+			this.props.onChangeMenu('EditPerson');
+		} else {
+			console.log('no');
+		}
+		
 	}
 
 	render(){

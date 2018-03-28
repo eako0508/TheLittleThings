@@ -12,7 +12,7 @@ export default class SideMenus extends React.Component {
 		}
 	}
 
-
+	/*
 	showModal = (e) => {
 
 		if(e.key === '1'){
@@ -23,6 +23,7 @@ export default class SideMenus extends React.Component {
 			window.location = '/add';
 		}
 	}
+	
 	handleLoginOk = (e) => {
 		e.stopPropagation();
 		console.log('OK');
@@ -61,9 +62,18 @@ export default class SideMenus extends React.Component {
 			registerVisible: false
 		});
 	}
+	*/
+	menuClick = (menu) => {
+		console.log(menu);
+		if(menu.key === '1'){
+			window.location = '/';
+		} else if(menu.key === '2'){
+			this.props.onChangeMenu('AddPerson');
+		}
+	}
 	render(){
 		return (
-			<Menu theme="dark" mode="inline" onClick={this.showModal}>
+			<Menu theme="dark" mode="inline" onClick={this.menuClick}>
 				<Menu.Item key="1" >
 					<Icon type="logout" />
 					<span className="nav-text">Logout</span>

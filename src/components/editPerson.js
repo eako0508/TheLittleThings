@@ -1,66 +1,11 @@
 import React from 'react';
-import SideMenus from './sidemenus';
-import './mainBody.css';
-import './dashboard.css';
-import { Layout, Form, Input, Button, List, Row, Col } from 'antd';
+import { Row, Col, List, Button } from 'antd';
 
-
-const { Header, Content, Footer, Sider } = Layout;
-const FormItem = Form.Item;
-const { TextArea } = Input;
-
-export default class Dashboard extends React.Component {
-	state = {
-		collapsed: false
-	}
-	onCollapse = (collapsed) => {
-		console.log(collapsed);
-		this.setState({ collapsed });
-	}
-	render(){
-		return (
-			<Layout style={{ minHeight: '100vh'}}>
-				<MainBody />
-				<Sider
-				breakpoint="lg"
-				collapsible
-				collapsed={this.state.collapsed}
-				onCollapse={this.onCollapse}
-				reverseArrow={true}
-				className='nav-sider'
-				>
-					<div className="logo">
-					</div>
-					<SideMenus />
-				</Sider>
-
-			</Layout>
-		);
-	}
-}
-
-
-class MainBody extends React.Component {
-
-	render(){
-		return (
-			<Layout>
-				<Header className='body-header' />
-				<Content className='body-content'>
-					<EditPerson />
-				</Content>
-				<Footer className='body-footer'>
-				The Little Things
-				</Footer>
-			</Layout>
-		);
-	}
-}
-
-class EditPerson extends React.Component {
+export default class EditPerson extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
+		//this.onChangeMenu = this.onChangeMenu.bind(this);
+		this.state = {			
 			data: {
 				likes: [
 					'cooking Italian food',
@@ -75,10 +20,30 @@ class EditPerson extends React.Component {
 			}
 		}
 	}
+	/* 
+	this doesn't work
+
+	goBack(e){
+		console.log(e);
+		if(this.props.onChangeMenu){
+			this.props.onChangeMenu('MainContent');
+		} else{
+			console.log('no');
+		}
+	}	
+	*/
+
+	goBack = (e) => {
+		this.props.onChangeMenu('MainContent');		
+	}
 
 	render(){
 		return (
-			<Row className='preference' gutter={16}>
+			
+			<Row className='preference' gutter={16}>				
+				<Row gutter={16}>
+					<Button onClick={this.goBack} > Go Back to Dashboard </Button>
+				</Row>
 				<Col span={12} className='Likes'>
 					<h3>Likes</h3>
 					<List

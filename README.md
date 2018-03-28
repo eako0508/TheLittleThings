@@ -1,3 +1,7 @@
-## Buildapc(working)
+## The Little Things
 
-Purpose of the app is to build a computer at minimum cost based on the user's need.
+
+Lot of times we take things for granted
+good change to rethink about the relationship with others
+habits/characteristics
+likes/dislikes
