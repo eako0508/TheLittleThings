@@ -13,55 +13,9 @@ export default class SideMenus extends React.Component {
 	}
 
 	/*
-	showModal = (e) => {
-
-		if(e.key === '1'){
-			this.setState({
-				loginVisible: true
-			});
-		} else if(e.key === '2'){
-			window.location = '/add';
-		}
-	}
 	
-	handleLoginOk = (e) => {
-		e.stopPropagation();
-		console.log('OK');
-		console.log(e);
-		this.setState({
-			loginVisible: false
-		});
-	}
-	handleLoginCancel = (e) => {
-		e.stopPropagation();
-		console.log('Cancel');
-		console.log(e);
-		this.setState({
-			loginVisible: false
-		});
-	}
-	handleRegisterBtn = (e) => {
-		e.stopPropagation();
-		console.log('RegisterBtn');
-		this.setState({
-			loginVisible: false,
-			registerVisible: true
-		});
-	}
-	handleRegisterOk = (e) => {
-		e.stopPropagation();
-		console.log('Register-cancel');
-		this.setState({
-			registerVisible: false
-		});
-	}
-	handleRegisterCancel = (e) => {
-		e.stopPropagation();
-		console.log('Register-cancel');
-		this.setState({
-			registerVisible: false
-		});
-	}
+	
+	
 	*/
 	menuClick = (menu) => {
 		console.log(menu);
