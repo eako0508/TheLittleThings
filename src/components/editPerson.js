@@ -1,17 +1,13 @@
 import React from 'react';
+import SideMenus from './sidemenus';
 import './mainBody.css';
 import './dashboard.css';
-import { Layout } from 'antd';
-import { Form, Input, Button, List, Row, Col } from 'antd';
-import SideMenus from './sidemenus';
+import { Layout, Form, Input, Button, List, Row, Col } from 'antd';
 
-const { Header, Content, Footer } = Layout;
+
+const { Header, Content, Footer, Sider } = Layout;
 const FormItem = Form.Item;
 const { TextArea } = Input;
-
-
-
-const { Sider } = Layout;
 
 export default class Dashboard extends React.Component {
 	state = {
