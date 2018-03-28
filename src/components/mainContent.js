@@ -17,6 +17,7 @@ export default class MainContent extends React.Component {
 	}
 
 	handleClickEdit = (e) => {
+		console.log(e);
 		if(this.props.onChangeMenu){
 			this.props.onChangeMenu('EditPerson');
 		} else {
@@ -27,12 +28,12 @@ export default class MainContent extends React.Component {
 
 	render(){
 		return (
-			<div className='body-content-div'>
+			<div className='body-content-div' onClick={this.handleClickEdit}>
 				<Card
 				hoverable
 				style={{ width: 240 }}
 				cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-				actions={[<Icon type="edit" onClick={this.handleClickEdit}/>, <Icon type="ellipsis" />]}
+				actions={[<Icon type="edit"/>, <Icon type="ellipsis" />]}
 				className='friendCards'
 				>
 					<Meta

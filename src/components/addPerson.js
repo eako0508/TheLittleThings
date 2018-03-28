@@ -1,6 +1,6 @@
 import React from 'react';	//origin
 import { Form, Input, Button } from 'antd';	//origin
-import { Layout, Row } from 'antd';
+import { Layout, Row, DatePicker } from 'antd';
 const FormItem = Form.Item;	//origin
 const { TextArea } = Input;	//origin
 
@@ -20,6 +20,7 @@ export default class AddPerson extends React.Component {
 		this.props.onChangeMenu('MainContent');		
 	}
 	render(){
+		const {getFieldDecorator} = this.props.form;
 		return (
 			<Row gutter={16}>
 				<Row gutter={16}>
@@ -31,6 +32,9 @@ export default class AddPerson extends React.Component {
 					</FormItem>
 					<FormItem label='Note'>
 						<TextArea rows={4} placeholder='Note' />
+					</FormItem>
+					<FormItem>
+						<DatePicker />
 					</FormItem>
 					<FormItem>
 						<Button type='primary' htmlType='submit'>Submit</Button>

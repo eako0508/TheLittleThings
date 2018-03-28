@@ -11,12 +11,6 @@ export default class SideMenus extends React.Component {
 			registerVisible: false
 		}
 	}
-
-	/*
-	
-	
-	
-	*/
 	menuClick = (menu) => {
 		console.log(menu);
 		if(menu.key === '1'){
@@ -31,22 +25,6 @@ export default class SideMenus extends React.Component {
 				<Menu.Item key="1" >
 					<Icon type="logout" />
 					<span className="nav-text">Logout</span>
-					{/*<Modal
-					title="Login"
-					visible={this.state.loginVisible}
-					onCancel={this.handleLoginCancel}
-					footer={null}
-					>
-						<LoginForm onClick={this.handleRegisterBtn} />
-					</Modal>
-					<Modal
-					title="Register"
-					visible={this.state.registerVisible}
-					onCancel={this.handleRegisterCancel}
-					onOk={this.handleRegisterOk}
-					>
-						<RegisterForm onClick={this.handleRegisterBtn} />
-					</Modal>*/}
 				</Menu.Item>
 				<Menu.Item key="2">
 					<Icon type="user-add" />
