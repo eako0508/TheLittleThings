@@ -1,11 +1,12 @@
 import React from 'react';
-import { Row, Col, List, Button } from 'antd';
+import { Row, Col, List, Button, Divider, Collapse } from 'antd';
+const Panel = Collapse.Panel;
 
 export default class EditPerson extends React.Component {
 	constructor(props){
 		super(props);
 		//this.onChangeMenu = this.onChangeMenu.bind(this);
-		this.state = {			
+		this.state = {
 			data: {
 				likes: [
 					'cooking Italian food',
@@ -17,10 +18,28 @@ export default class EditPerson extends React.Component {
 					'She hates when people taker her food away without asking, like snacks',
 					'she doesn\'t like rude people'
 				]
-			}
+			},
+			questionnair: [
+				{
+					q:'What is your favorite local restaurant and the meal you most enjoy eating when there?',
+					a: 'There\'s a vietnamese restaurant in the flushing and I always eat Pho and summer roll from there every time I visit.'
+				},{
+					q: 'What\'s your favorite drink?',
+					a: 'Lately it\'s black coffee.'
+				},{
+					q: 'What songs have you completely memorized?',
+					a: 'Lot of songs from Seo Taiji from South Korea.'
+				},{
+					q: 'Are you usually early or late?',
+					a: 'I am an early bird at the beginning, but then ...'
+				},{
+					q: 'How do you relax after a hard day of work?',
+					a: 'I used to play computer games, or watch TV shows.'
+				}
+			]
 		}
 	}
-	/* 
+	/*
 	this doesn't work
 
 	goBack(e){
@@ -30,36 +49,55 @@ export default class EditPerson extends React.Component {
 		} else{
 			console.log('no');
 		}
-	}	
+	}
 	*/
 
 	goBack = (e) => {
-		this.props.onChangeMenu('MainContent');		
+		this.props.onChangeMenu('MainContent');
 	}
 
 	render(){
+		const showQuestionnair = this.state.questionnair.map((item,idx)=>{
+			return <Panel header={item.q} key={idx}><p>{item.a}</p></Panel>;
+		});
 		return (
-			
-			<Row className='preference' gutter={16}>				
+			<Row className='preference' gutter={16}>
 				<Row gutter={16}>
 					<Button onClick={this.goBack} > Go Back to Dashboard </Button>
 				</Row>
-				<Col span={12} className='Likes'>
-					<h3>Likes</h3>
-					<List
+				<Divider />
+				<Row gutter={16}>
+					<h3>Jessica</h3>
+					Date of birth: March 17
+				</Row>
+				<Divider />
+				<Row gutter={16}>
+					<Col span={12} className='Likes'>
+						<h3>Likes</h3>
+						<List
+						dataSource={this.state.data.likes}
+						renderItem={item => (<List.Item>{item}</List.Item>)}
+						/>
+					</Col>
+					<Col span={12} className='Dislikes'>
+						<h3>Dislikes</h3>
+						<List
+						dataSource={this.state.data.dislikes}
+						renderItem={item => (<List.Item>{item}</List.Item>)}
+						/>
+					</Col>
+				</Row>
+				<Divider><h3>Questionnairs</h3></Divider>
+				<Row gutter={16}>
+					{/*<List
 					bordered
-					dataSource={this.state.data.likes}
-					renderItem={item => (<List.Item>{item}</List.Item>)}
-					/>
-				</Col>
-				<Col span={12} className='Dislikes'>
-					<h3>Dislikes</h3>
-					<List
-					bordered
-					dataSource={this.state.data.dislikes}
-					renderItem={item => (<List.Item>{item}</List.Item>)}
-					/>
-				</Col>
+					dataSource={this.state.questionnair}
+					renderItem={item=> (<List.Item><List.Item>Q: {item.q}</List.Item><List.Item>A: {item.a}</List.Item></List.Item>)}
+					/>*/}
+					<Collapse>
+						{showQuestionnair}
+					</Collapse>
+				</Row>
 			</Row>
 		);
 	}
