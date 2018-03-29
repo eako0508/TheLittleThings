@@ -57,7 +57,9 @@ export default class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-					
+						
+						<Divider />
+
 						<h3>Dislikes</h3>
 						<List
 						dataSource={this.props.editPersonData.data.dislikes}

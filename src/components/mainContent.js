@@ -13,20 +13,16 @@ export default class MainContent extends React.Component {
 	}
 
 	handleClickEdit = (e) => {
+		console.log("e");
 		console.log(e);
-		if(this.props.onChangeMenu){
+		if(e === 0){
 			this.props.onChangeMenu('EditPerson');
-		} else {
-			console.log('no');
-		}
+		}		
 		return false;
 	}
 	handleClickDot = (e) => {
 		console.log(e);
 		return false;
-	}
-	clik = (e) => {
-		console.log(e);
 	}
 	
 	render(){
@@ -36,8 +32,11 @@ export default class MainContent extends React.Component {
 			
 			return (
 				<Card
-					hoverable
+					key={`card-${idx}`}
+					className='friendCards'
 					style={{ width: 240 }}
+
+					hoverable
 					cover={
 						item.url === ''
 						? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
@@ -46,16 +45,15 @@ export default class MainContent extends React.Component {
 					
 					actions={
 						[
+						<a onClick={()=>this.handleClickEdit(idx)}>
+							<Icon type="edit" />
+						</a>
 						
-						<Icon type="edit"
-						//onClick={()=>this.handleClickEdit(idx)}
-						/>
-						
-						, <Icon type="ellipsis" />
-						//onClick={()=>this.handleClickDot(idx)}
+						, <a onClick={()=>this.handleClickDot(idx)}>
+							<Icon type="ellipsis" />
+						</a>
 						]
-					}
-					className='friendCards'
+					}					
 					>
 						<Meta
 						title={item.name}
@@ -66,7 +64,7 @@ export default class MainContent extends React.Component {
 		});
 
 		return (
-			<div className='body-content-div' onClick={this.clik.bind(this)}>				
+			<div className='body-content-div'>
 				{displayCards}
 			</div>
 		);
