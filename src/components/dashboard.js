@@ -15,14 +15,15 @@ export default class Dashboard extends React.Component {
 			menu: 'MainContent'
 		}
 	}
-	
+
 	onCollapse = (collapsed) => {
 		console.log(collapsed);
 		//this.setState({ collapsed });
 	}
 	onChangeMenu = (menu) => {
 		this.setState({
-			menu
+			menu,
+			collapsed: true
 		});
 	}
 	//not collapsing the menu with button
@@ -46,7 +47,7 @@ export default class Dashboard extends React.Component {
 			<Layout style={{ minHeight: '100vh'}}>
 				<Sider
 				breakpoint='lg'
-				collapsedWidth="0"				
+				collapsedWidth="0"
 				onCollapse={(collapsed, type) => {console.log(collapsed, type);}}
 				className='nav-sider'
 				>
@@ -69,7 +70,7 @@ export default class Dashboard extends React.Component {
 					The Little Things
 					</Footer>
 				</Layout>
-				
+
 
 			</Layout>
 		);
