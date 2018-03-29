@@ -7,6 +7,7 @@ export default class EditPerson extends React.Component {
 		super(props);
 		//this.onChangeMenu = this.onChangeMenu.bind(this);
 		this.state = {
+			/*
 			data: {
 				likes: [
 					'cooking Italian food',
@@ -37,6 +38,7 @@ export default class EditPerson extends React.Component {
 					a: 'I used to play computer games, or watch TV shows.'
 				}
 			]
+			*/
 		}
 	}
 	/*
@@ -53,7 +55,9 @@ export default class EditPerson extends React.Component {
 	*/
 
 	render(){
-		const showQuestionnair = this.state.questionnair.map((item,idx)=>{
+		console.log(this.props.editPersonData);
+		const showQuestionnair = this.props.editPersonData.questionnair.map((item,idx)=>{
+			console.log(item);
 			return <Panel header={item.q} key={idx}><p>{item.a}</p></Panel>;
 		});
 		return (
@@ -69,14 +73,14 @@ export default class EditPerson extends React.Component {
 					<Col span={12} className='Likes'>
 						<h3>Likes</h3>
 						<List
-						dataSource={this.state.data.likes}
+						dataSource={this.props.editPersonData.data.likes}
 						renderItem={item => (<List.Item>{item}</List.Item>)}
 						/>
 					</Col>
 					<Col span={12} className='Dislikes'>
 						<h3>Dislikes</h3>
 						<List
-						dataSource={this.state.data.dislikes}
+						dataSource={this.props.editPersonData.data.dislikes}
 						renderItem={item => (<List.Item>{item}</List.Item>)}
 						/>
 					</Col>

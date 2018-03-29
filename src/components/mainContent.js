@@ -9,9 +9,10 @@ export default class MainContent extends React.Component {
 		super(props);
 		this.state = {
 			friends: [
-				{ name: 'Josh', description: 'he\'s alright' },
-				{ name: 'Isaac', description: 'Small asian guy from office' },
-				{ name: 'Ryan', description: 'A guy from New Hampshire' }
+				{ name: 'Jessica', description: 'Cool girl', url:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'},
+				{ name: 'Josh', description: 'he\'s alright', url:'' },
+				{ name: 'Isaac', description: 'Small asian guy from office', url:'' },
+				{ name: 'Ryan', description: 'A guy from New Hampshire', url:'' }
 			]
 		}
 	}
@@ -22,14 +23,47 @@ export default class MainContent extends React.Component {
 			this.props.onChangeMenu('EditPerson');
 		} else {
 			console.log('no');
-		}
-		
+		}		
 	}
 
 	render(){
+		console.log(this.props.mainContentData.friends);
+		const displayCards = this.props.mainContentData.friends.map((item,idx)=>{
+
+			let picCover;
+			if(item.url===''){
+				return (
+					<Card
+					hoverable
+					style={{ width: 240 }}
+					cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
+					actions={[<Icon type="edit"/>, <Icon type="ellipsis" />]}
+					className='friendCards'
+					>
+						<Meta
+						title={item.name}
+						description={item.description}
+						/>
+					</Card>
+			)} else{
+				return (
+					<Card
+					hoverable
+					style={{ width: 240 }}
+					cover={<img alt="example" src={item.url} />}
+					actions={[<Icon type="edit"/>, <Icon type="ellipsis" />]}
+					className='friendCards'
+					>
+						<Meta
+						title={item.name}
+						description={item.description}
+						/>
+					</Card>
+				)}
+		});
 		return (
 			<div className='body-content-div' onClick={this.handleClickEdit}>
-				<Card
+				{/*<Card
 				hoverable
 				style={{ width: 240 }}
 				cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
@@ -76,7 +110,8 @@ export default class MainContent extends React.Component {
 					title={this.state.friends[2].name}
 					description={this.state.friends[2].description}
 					/>
-				</Card>
+				</Card>*/}
+				{displayCards}
 			</div>
 		);
 	}
