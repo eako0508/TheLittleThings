@@ -8,12 +8,7 @@ export default class MainContent extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			friends: [
-				{ name: 'Jessica', description: 'Cool girl', url:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'},
-				{ name: 'Josh', description: 'he\'s alright', url:'' },
-				{ name: 'Isaac', description: 'Small asian guy from office', url:'' },
-				{ name: 'Ryan', description: 'A guy from New Hampshire', url:'' }
-			]
+
 		}
 	}
 
@@ -23,94 +18,55 @@ export default class MainContent extends React.Component {
 			this.props.onChangeMenu('EditPerson');
 		} else {
 			console.log('no');
-		}		
+		}
+		return false;
 	}
-
+	handleClickDot = (e) => {
+		console.log(e);
+		return false;
+	}
+	clik = (e) => {
+		console.log(e);
+	}
+	
 	render(){
 		console.log(this.props.mainContentData.friends);
+		
 		const displayCards = this.props.mainContentData.friends.map((item,idx)=>{
-
-			let picCover;
-			if(item.url===''){
-				return (
-					<Card
+			
+			return (
+				<Card
 					hoverable
 					style={{ width: 240 }}
-					cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
-					actions={[<Icon type="edit"/>, <Icon type="ellipsis" />]}
+					cover={
+						item.url === ''
+						? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
+						: <img alt={`img-${idx}`} src={item.url} />
+					}
+					
+					actions={
+						[
+						
+						<Icon type="edit"
+						//onClick={()=>this.handleClickEdit(idx)}
+						/>
+						
+						, <Icon type="ellipsis" />
+						//onClick={()=>this.handleClickDot(idx)}
+						]
+					}
 					className='friendCards'
 					>
 						<Meta
 						title={item.name}
 						description={item.description}
 						/>
-					</Card>
-			)} else{
-				return (
-					<Card
-					hoverable
-					style={{ width: 240 }}
-					cover={<img alt="example" src={item.url} />}
-					actions={[<Icon type="edit"/>, <Icon type="ellipsis" />]}
-					className='friendCards'
-					>
-						<Meta
-						title={item.name}
-						description={item.description}
-						/>
-					</Card>
-				)}
+				</Card>
+			);			
 		});
+
 		return (
-			<div className='body-content-div' onClick={this.handleClickEdit}>
-				{/*<Card
-				hoverable
-				style={{ width: 240 }}
-				cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-				actions={[<Icon type="edit"/>, <Icon type="ellipsis" />]}
-				className='friendCards'
-				>
-					<Meta
-					title="Jessica"
-					description="Cool girl"
-					/>
-				</Card>
-				<Card
-				hoverable
-				style={{ width: 240 }}
-				cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
-				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
-				className='friendCards'
-				>
-					<Meta
-					title={this.state.friends[0].name}
-					description={this.state.friends[0].description}
-					/>
-				</Card>
-				<Card
-				hoverable
-				style={{ width: 240 }}
-				cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
-				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
-				className='friendCards'
-				>
-					<Meta
-					title={this.state.friends[1].name}
-					description={this.state.friends[1].description}
-					/>
-				</Card>
-				<Card
-				hoverable
-				style={{ width: 240 }}
-				cover={<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>}
-				actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
-				className='friendCards'
-				>
-					<Meta
-					title={this.state.friends[2].name}
-					description={this.state.friends[2].description}
-					/>
-				</Card>*/}
+			<div className='body-content-div' onClick={this.clik.bind(this)}>				
 				{displayCards}
 			</div>
 		);

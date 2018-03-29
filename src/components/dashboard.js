@@ -1,10 +1,11 @@
 import React from 'react';
-import SideMenus from './sidemenus';
 import MainContent from './mainContent';
 import EditPerson from './editPerson';
 import AddPerson from './addPerson';
+import NavBS from './nav';
 import './dashboard.css';
-import { Layout, Icon } from 'antd';
+import { Layout, Icon, Col, BackTop } from 'antd';
+import { PageHeader } from 'react-bootstrap';
 const { Header, Content, Footer, Sider } = Layout;
 
 const editPersonData = {
@@ -49,7 +50,6 @@ const addPersonData = {
 		'What\'s the farthest you’ve ever been from home?'
 	]
 };
-
 const mainContentData = {
 	friends: [
 		{ name: 'Jessica', description: 'Cool girl', url:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'},
@@ -57,34 +57,20 @@ const mainContentData = {
 		{ name: 'Isaac', description: 'Small asian guy from office', url:'' },
 		{ name: 'Ryan', description: 'A guy from New Hampshire', url:'' }
 	]
-}
+};
+
 export default class Dashboard extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			collapsed: false,
+		this.state = {		
 			menu: 'MainContent'
 		}
 	}
-
-	onCollapse = (collapsed) => {
-		console.log(collapsed);
-		//this.setState({ collapsed });
-	}
 	onChangeMenu = (menu) => {
 		this.setState({
-			menu,
-			collapsed: true
+			menu
 		});
-	}
-	//not collapsing the menu with button
-	toggle = () => {
-		console.log('toggle');
-		console.log(this.state.collapsed);
-		this.setState({
-			collapsed: !this.state.collapsed
-		});
-	}
+	}	
 	render(){
 		let onMainBody;
 		if(this.state.menu === 'MainContent'){
@@ -95,34 +81,20 @@ export default class Dashboard extends React.Component {
 			onMainBody = <AddPerson addPersonData={addPersonData} onChangeMenu={menu=>this.onChangeMenu(menu)} />;
 		}
 		return (
-			<Layout style={{ minHeight: '100vh'}}>
-				<Sider
-				breakpoint='lg'
-				collapsedWidth="0"
-				onCollapse={(collapsed, type) => {console.log(collapsed, type);}}
-				className='nav-sider'
-				>
-					<div className="logo">
-					</div>
-					<SideMenus onChangeMenu={menu=>this.onChangeMenu(menu)} />
-				</Sider>
-				<Layout>
-					<Header className='body-header'>
-						<Icon
-						className='trigger'
-						type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-						onClick={this.toggle}
-						/>
-					</Header>
+			<Layout style={{ minHeight: '100vh'}}>								
+				<NavBS  onChangeMenu={menu=>this.onChangeMenu(menu)} />
+				<Layout>					
+					{/*<Header className='body-header'>*/}
 					<Content className='body-content'>
+						<Col span={16} offset={4}>
 						{onMainBody}
+						</Col>
 					</Content>
 					<Footer className='body-footer'>
 					The Little Things
 					</Footer>
+					<BackTop />
 				</Layout>
-
-
 			</Layout>
 		);
 	}

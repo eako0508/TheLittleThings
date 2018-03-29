@@ -9,16 +9,7 @@ export default class AddPerson extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			/*
-			questions: [
-				'What is your favorite local restaurant and the meal you most enjoy eating when there?',
-				'What\'s your favorite drink?',
-				'What songs have you completely memorized?',
-				'Are you usually early or late?',
-				'How do you relax after a hard day of work?',
-				'What\'s the farthest you’ve ever been from home?'
-			]
-			*/
+			
 		}
 	}
 	handleSubmit = (e) => {

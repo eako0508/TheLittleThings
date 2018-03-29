@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './components/app';
-//import App from './components/test1';
-//import App from './components/landing';
 
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
