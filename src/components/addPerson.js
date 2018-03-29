@@ -23,19 +23,14 @@ export default class AddPerson extends React.Component {
 		e.preventDefault();
 		console.log('Submitted');
 	}
-	goBack = (e) => {
-		this.props.onChangeMenu('MainContent');
-	}
+	
 	render(){
 		//const {getFieldDecorator} = this.props.form;
 		const questions = this.state.questions.map((item,idx)=>{
 			return <FormItem key={idx}>{item}<TextArea rows={4}/></FormItem>;
 		});
 		return (
-			<Row gutter={16}>
-				<Row gutter={16}>
-					<Button onClick={this.goBack} > Go Back to Dashboard </Button>
-				</Row>
+			<Row gutter={16}>				
 				<Form onSubmit={this.handleSubmit}>
 					<FormItem label='Name'>
 						<Input placeholder='Name' />

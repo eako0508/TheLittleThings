@@ -52,19 +52,13 @@ export default class EditPerson extends React.Component {
 	}
 	*/
 
-	goBack = (e) => {
-		this.props.onChangeMenu('MainContent');
-	}
-
 	render(){
 		const showQuestionnair = this.state.questionnair.map((item,idx)=>{
 			return <Panel header={item.q} key={idx}><p>{item.a}</p></Panel>;
 		});
 		return (
 			<Row className='preference' gutter={16}>
-				<Row gutter={16}>
-					<Button onClick={this.goBack} > Go Back to Dashboard </Button>
-				</Row>
+				
 				<Divider />
 				<Row gutter={16}>
 					<h3>Jessica</h3>

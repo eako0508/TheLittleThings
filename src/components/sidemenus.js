@@ -16,6 +16,8 @@ export default class SideMenus extends React.Component {
 		if(menu.key === '1'){
 			window.location = '/';
 		} else if(menu.key === '2'){
+			this.props.onChangeMenu('MainContent');
+		} else if(menu.key === '3'){
 			this.props.onChangeMenu('AddPerson');
 		}
 	}
@@ -27,6 +29,10 @@ export default class SideMenus extends React.Component {
 					<span className="nav-text">Logout</span>
 				</Menu.Item>
 				<Menu.Item key="2">
+					<Icon type="appstore" />
+					<span className="nav-text">Dash Board</span>
+				</Menu.Item>
+				<Menu.Item key="3">
 					<Icon type="user-add" />
 					<span className="nav-text">Add Person</span>
 				</Menu.Item>
