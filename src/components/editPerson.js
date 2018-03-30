@@ -1,33 +1,29 @@
 import React from 'react';
-import { Row, Col, List, Button, Divider, Collapse } from 'antd';
-import { Button as ButtonBS } from 'react-bootstrap';
+import AddToList from './addToList';
+import { Row, List, Divider, Collapse } from 'antd';
+//import { Button as ButtonBS, FormGroup, InputGroup, FormControl } from 'react-bootstrap';
+//const FormItem = Form.Item;
 const Panel = Collapse.Panel;
 
 export default class EditPerson extends React.Component {
 	constructor(props){
-		super(props);
-		//this.onChangeMenu = this.onChangeMenu.bind(this);
+		super(props);		
 		this.state = {
 
 		}
-	}
-	/*
-	this doesn't work
-
-	goBack(e){
-		console.log(e);
-		if(this.props.onChangeMenu){
-			this.props.onChangeMenu('MainContent');
-		} else{
-			console.log('no');
+	}	
+	onSubmitHandler = (likey, obj) => {		
+		if(likey === 'like'){
+			console.log('like');
+			console.log(obj);
+		} else {
+			console.log('dislike');
+			console.log(obj);
 		}
 	}
-	*/
-
 	render(){
-		console.log(this.props.editPersonData);
-		const showQuestionnair = this.props.editPersonData.questionnair.map((item,idx)=>{
-			console.log(item);
+		
+		const showQuestionnair = this.props.editPersonData.questionnair.map((item,idx)=>{			
 			return (
 				<Panel
 				header={item.q}
@@ -37,6 +33,8 @@ export default class EditPerson extends React.Component {
 				</Panel>
 			);
 		});
+		
+
 		return (
 			<Row className='preference' gutter={16}>
 
@@ -47,34 +45,32 @@ export default class EditPerson extends React.Component {
 				<Divider />
 				<Row gutter={16}>
 
-						<h3 className='d-inline'>Likes</h3>
-						<Button >add</Button>
-						<ButtonBS>Add</ButtonBS>
-						<a>Add</a>
-						<List
-						dataSource={this.props.editPersonData.data.likes}
-						renderItem={item => (
-							<List.Item
-							actions={[<a href='#'>edit</a>, <a href='#'>remove</a>]}
-							>
-								{item}
-							</List.Item>
-						)}
-						/>
+					<h3>Likes</h3>
+					<List
+					dataSource={this.props.editPersonData.data.likes}
+					renderItem={item => (
+						<List.Item
+						actions={[<a>edit</a>, <a>remove</a>]}
+						>
+							{item}
+						</List.Item>
+					)}
+					/>
+					<AddToList onSubmitHandler={e=>this.onSubmitHandler('like', e)} />					
+					<Divider />
 
-						<Divider />
-
-						<h3>Dislikes</h3>
-						<List
-						dataSource={this.props.editPersonData.data.dislikes}
-						renderItem={item => (
-							<List.Item
-							actions={[<a href='#'>edit</a>, <a href='#'>remove</a>]}
-							>
-								{item}
-							</List.Item>
-						)}
-						/>
+					<h3>Dislikes</h3>
+					<List
+					dataSource={this.props.editPersonData.data.dislikes}
+					renderItem={item => (
+						<List.Item
+						actions={[<a>edit</a>, <a>remove</a>]}
+						>
+							{item}
+						</List.Item>
+					)}
+					/>
+					<AddToList onSubmitHandler={e=>this.onSubmitHandler('dislike', e)} />
 
 				</Row>
 				<Divider />

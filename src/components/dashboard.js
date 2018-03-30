@@ -4,9 +4,9 @@ import EditPerson from './editPerson';
 import AddPerson from './addPerson';
 import NavBS from './nav';
 import './dashboard.css';
-import { Layout, Icon, Col, BackTop } from 'antd';
-import { PageHeader } from 'react-bootstrap';
-const { Header, Content, Footer, Sider } = Layout;
+import { Layout, Col, BackTop } from 'antd';
+
+const { Content, Footer } = Layout;
 
 const editPersonData = {
 	data: {

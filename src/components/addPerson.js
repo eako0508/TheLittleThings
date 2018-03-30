@@ -1,6 +1,6 @@
 import React from 'react';	//origin
 import { Form, Input, Button } from 'antd';	//origin
-import { Layout, Row, DatePicker } from 'antd';
+import { Row, DatePicker } from 'antd';
 const FormItem = Form.Item;	//origin
 const { TextArea } = Input;	//origin
 

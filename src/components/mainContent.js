@@ -1,6 +1,5 @@
 import React from 'react';
 import './mainContent.css';
-import { Redirect } from 'react-router-dom';
 import { Avatar, Card, Icon } from 'antd';
 const { Meta } = Card;
 
@@ -13,15 +12,15 @@ export default class MainContent extends React.Component {
 	}
 
 	handleClickEdit = (e) => {
-		console.log("e");
-		console.log(e);
+		//console.log("e");
+		//console.log(e);
 		if(e === 0){
 			this.props.onChangeMenu('EditPerson');
 		}		
 		return false;
 	}
 	handleClickDot = (e) => {
-		console.log(e);
+		//console.log(e);
 		return false;
 	}
 	

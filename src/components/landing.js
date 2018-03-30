@@ -1,6 +1,5 @@
 import React from 'react';
 import LoginForm from './loginForm';
-import { Link } from 'react-router-dom';
 import { Button, Modal } from 'antd';
 
 export default class Landing extends React.Component {

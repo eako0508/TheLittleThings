@@ -24,7 +24,7 @@ export default class NavBS extends React.Component{
 			<Navbar collapseOnSelect className='mainNavBar'>
 				<Navbar.Header>
 					<Navbar.Brand>
-						<a href="#">The Little Things</a>
+						<a>The Little Things</a>
 					</Navbar.Brand>
 					<Navbar.Toggle />
 				</Navbar.Header>
