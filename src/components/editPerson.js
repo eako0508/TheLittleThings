@@ -38,14 +38,14 @@ export default class EditPerson extends React.Component {
 		});
 		return (
 			<Row className='preference' gutter={16}>
-				
+
 				<Row gutter={16}>
 					<h3>Jessica</h3>
 					Date of birth: March 17
 				</Row>
 				<Divider />
 				<Row gutter={16}>
-					
+
 						<h3>Likes</h3>
 						<List
 						dataSource={this.props.editPersonData.data.likes}
@@ -57,7 +57,7 @@ export default class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-						
+
 						<Divider />
 
 						<h3>Dislikes</h3>
@@ -71,16 +71,11 @@ export default class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-					
+
 				</Row>
 				<Divider />
 				<h3>Questionnairs</h3>
 				<Row gutter={16}>
-					{/*<List
-					bordered
-					dataSource={this.state.questionnair}
-					renderItem={item=> (<List.Item><List.Item>Q: {item.q}</List.Item><List.Item>A: {item.a}</List.Item></List.Item>)}
-					/>*/}
 					<Collapse>
 						{showQuestionnair}
 					</Collapse>

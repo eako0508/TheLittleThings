@@ -62,7 +62,7 @@ const mainContentData = {
 export default class Dashboard extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {		
+		this.state = {
 			menu: 'MainContent'
 		}
 	}
@@ -70,7 +70,7 @@ export default class Dashboard extends React.Component {
 		this.setState({
 			menu
 		});
-	}	
+	}
 	render(){
 		let onMainBody;
 		if(this.state.menu === 'MainContent'){
@@ -81,10 +81,10 @@ export default class Dashboard extends React.Component {
 			onMainBody = <AddPerson addPersonData={addPersonData} onChangeMenu={menu=>this.onChangeMenu(menu)} />;
 		}
 		return (
-			<Layout style={{ minHeight: '100vh'}}>								
+			<Layout style={{ minHeight: '100vh'}}>
 				<NavBS  onChangeMenu={menu=>this.onChangeMenu(menu)} />
-				<Layout>					
-					{/*<Header className='body-header'>*/}
+				<Layout>
+					{/*<Header className='body-header' />*/}
 					<Content className='body-content'>
 						<Col span={16} offset={4}>
 						{onMainBody}
