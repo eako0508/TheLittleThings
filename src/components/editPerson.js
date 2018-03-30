@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, List, Button, Divider, Collapse } from 'antd';
+import { Button as ButtonBS } from 'react-bootstrap';
 const Panel = Collapse.Panel;
 
 export default class EditPerson extends React.Component {
@@ -46,7 +47,10 @@ export default class EditPerson extends React.Component {
 				<Divider />
 				<Row gutter={16}>
 
-						<h3>Likes</h3>
+						<h3 className='d-inline'>Likes</h3>
+						<Button >add</Button>
+						<ButtonBS>Add</ButtonBS>
+						<a>Add</a>
 						<List
 						dataSource={this.props.editPersonData.data.likes}
 						renderItem={item => (
