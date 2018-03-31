@@ -1,18 +1,19 @@
 import React from 'react';
 import AddToList from './addToList';
-import { Row, List, Divider, Collapse } from 'antd';
-//import { Button as ButtonBS, FormGroup, InputGroup, FormControl } from 'react-bootstrap';
-//const FormItem = Form.Item;
+import './editPerson.css';
+import { List, Divider, Collapse, Avatar } from 'antd';
+import { Row, Col, Image } from 'react-bootstrap';
+
 const Panel = Collapse.Panel;
 
 export default class EditPerson extends React.Component {
 	constructor(props){
-		super(props);		
+		super(props);
 		this.state = {
 
 		}
-	}	
-	onSubmitHandler = (likey, obj) => {		
+	}
+	onSubmitHandler = (likey, obj) => {
 		if(likey === 'like'){
 			console.log('like');
 			console.log(obj);
@@ -22,8 +23,8 @@ export default class EditPerson extends React.Component {
 		}
 	}
 	render(){
-		
-		const showQuestionnair = this.props.editPersonData.questionnair.map((item,idx)=>{			
+
+		const showQuestionnair = this.props.editPersonData.questionnair.map((item,idx)=>{
 			return (
 				<Panel
 				header={item.q}
@@ -33,18 +34,29 @@ export default class EditPerson extends React.Component {
 				</Panel>
 			);
 		});
-		
+
 
 		return (
-			<Row className='preference' gutter={16}>
+			<Row className='preference'>
+				<Row>
+					<Col xs={10} xsOffset={1} md={4} mdOffset={4}>
 
-				<Row gutter={16}>
-					<h3>Jessica</h3>
-					Date of birth: March 17
+					<h3 className='block-center'>{this.props.editPersonData.info.name}</h3>
+					{/*<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>*/}
+					<Row>
+
+							{this.props.editPersonData.info.url === ''
+								? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
+								: <Image className='person-img' alt='img' src={this.props.editPersonData.info.url} responsive />}
+
+					</Row>
+					<p>
+						Date of birth: {this.props.editPersonData.info.DOB}
+					</p>
+					</Col>
 				</Row>
 				<Divider />
-				<Row gutter={16}>
-
+				<Row >
 					<h3>Likes</h3>
 					<List
 					dataSource={this.props.editPersonData.data.likes}
@@ -56,7 +68,7 @@ export default class EditPerson extends React.Component {
 						</List.Item>
 					)}
 					/>
-					<AddToList onSubmitHandler={e=>this.onSubmitHandler('like', e)} />					
+					<AddToList onSubmitHandler={e=>this.onSubmitHandler('like', e)} />
 					<Divider />
 
 					<h3>Dislikes</h3>
@@ -80,6 +92,7 @@ export default class EditPerson extends React.Component {
 						{showQuestionnair}
 					</Collapse>
 				</Row>
+
 			</Row>
 		);
 	}

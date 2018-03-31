@@ -4,11 +4,16 @@ import EditPerson from './editPerson';
 import AddPerson from './addPerson';
 import NavBS from './nav';
 import './dashboard.css';
-import { Layout, Col, BackTop } from 'antd';
+import { Layout, BackTop } from 'antd';
 
 const { Content, Footer } = Layout;
 
 const editPersonData = {
+	info: {
+		name: 'Jessica',
+		DOB: 'March 17',
+		url:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+	},
 	data: {
 		likes: [
 			'cooking Italian food',
@@ -86,9 +91,9 @@ export default class Dashboard extends React.Component {
 				<Layout>
 					{/*<Header className='body-header' />*/}
 					<Content className='body-content'>
-						<Col span={16} offset={4}>
+
 						{onMainBody}
-						</Col>
+
 					</Content>
 					<Footer className='body-footer'>
 					The Little Things
