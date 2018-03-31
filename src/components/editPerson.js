@@ -48,9 +48,8 @@ export default class EditPerson extends React.Component {
 							{this.props.editPersonData.info.url === ''
 								? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
 								: <Image className='person-img' alt='img' src={this.props.editPersonData.info.url} responsive />}
-
 					</Row>
-					<p>
+					<p className='css-dob'>
 						Date of birth: {this.props.editPersonData.info.DOB}
 					</p>
 					</Col>

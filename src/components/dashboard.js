@@ -85,6 +85,8 @@ export default class Dashboard extends React.Component {
 		} else if(this.state.menu === 'AddPerson'){
 			onMainBody = <AddPerson addPersonData={addPersonData} onChangeMenu={menu=>this.onChangeMenu(menu)} />;
 		}
+
+
 		return (
 			<Layout style={{ minHeight: '100vh'}}>
 				<NavBS  onChangeMenu={menu=>this.onChangeMenu(menu)} />
