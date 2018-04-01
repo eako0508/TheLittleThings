@@ -1,5 +1,6 @@
 import React from 'react';
 import AddInput from './addInput';
+import SingleInputForm from './singleInputForm';
 import './editPerson.css';
 import { List, Divider, Collapse, Avatar } from 'antd';
 import { Row, Col, Image } from 'react-bootstrap';
@@ -70,10 +71,13 @@ export default class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-						<AddInput
+
+						{/*<AddInput
 						onSubmitHandler={e=>this.onSubmitHandler('like', e)}
 						info={{placeholder: 'things to add', btnTitle:'Add'}}
-						/>
+						/>*/}
+						<SingleInputForm />
+
 						<Divider />
 
 
