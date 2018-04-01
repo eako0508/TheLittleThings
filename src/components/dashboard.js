@@ -1,5 +1,6 @@
 import React from 'react';
 import MainContent from './mainContent';
+//import MainContent from './mainContent_test';
 import EditPerson from './editPerson';
 import AddPerson from './addPerson';
 import NavBS from './nav';
@@ -11,7 +12,8 @@ const { Content, Footer } = Layout;
 const editPersonData = {
 	info: {
 		id: 1,
-		name: 'Jessica',
+		firstName: 'Natalie',
+		lastName: 'Johnes',
 		DOB: 'March 17',
 		url: './images/portraits/template_female_01.jpg'
 	},
@@ -58,10 +60,10 @@ const addPersonData = {
 };
 const mainContentData = {
 	friends: [
-		{ name: 'Natalie', description: 'A girl from Maine', url: './images/portraits/template_female_01.jpg'},
-		{ name: 'Josh', description: 'he\'s alright', url: './images/portraits/template_male_01.jpg' },
-		{ name: 'Seohyun', description: 'Josh\'s step-daughter', url: './images/portraits/template_female_02.jpg' },
-		{ name: 'Ed Harris', description: 'The legendary Ed Harris', url: './images/portraits/template_male_02.jpg'}
+		{ id: 1, name: {firstName: 'Natalie', lastName: 'Johnes'}, description: 'A girl from Maine', url: './images/portraits/template_female_01.jpg'},
+		{ id: 2, name: {firstName: 'Josh', lastName: 'somelastname'}, description: 'he\'s alright', url: './images/portraits/template_male_01.jpg' },
+		{ id: 3, name: {firstName: 'Seohyun', lastName: 'Seo'}, description: 'Josh\'s step-daughter', url: './images/portraits/template_female_02.jpg' },
+		{ id: 4, name: {firstName: 'Ed', lastName: 'Harris'}, description: 'The legendary Ed Harris', url: './images/portraits/template_male_02.jpg'}
 	]
 };
 

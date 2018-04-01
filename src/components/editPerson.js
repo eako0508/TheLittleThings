@@ -1,5 +1,5 @@
 import React from 'react';
-import AddToList from './addToList';
+import AddInput from './addInput';
 import './editPerson.css';
 import { List, Divider, Collapse, Avatar } from 'antd';
 import { Row, Col, Image } from 'react-bootstrap';
@@ -41,15 +41,15 @@ export default class EditPerson extends React.Component {
 
 				<Col xs={10} xsOffset={1}>
 
-					<h3 className='block-center'>{this.props.editPersonData.info.name}</h3>
+					<h3 className='block-center'>{this.props.editPersonData.info.firstName}</h3>
 					{/*<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>*/}
-					<Row>
+					{/*<Row>
 						<Col xs={12} sm={6} smOffset={3}>
 						{this.props.editPersonData.info.url === ''
 							? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
 							: <Image className='person-img' alt='img' src={this.props.editPersonData.info.url} responsive rounded />}
 						</Col>
-					</Row>
+					</Row>*/}
 					<h4>Date of birth</h4>
 					<p>
 						{this.props.editPersonData.info.DOB}
@@ -70,7 +70,10 @@ export default class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-						<AddToList onSubmitHandler={e=>this.onSubmitHandler('like', e)} />
+						<AddInput
+						onSubmitHandler={e=>this.onSubmitHandler('like', e)}
+						info={{placeholder: 'things to add', btnTitle:'Add'}}
+						/>
 						<Divider />
 
 
@@ -85,7 +88,10 @@ export default class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-						<AddToList onSubmitHandler={e=>this.onSubmitHandler('dislike', e)} />
+						<AddInput
+						onSubmitHandler={e=>this.onSubmitHandler('dislike', e)}
+						info={{placeholder: 'things to add', btnTitle:'Add'}}
+						/>
 						<Divider />
 
 						<h3>Questionnairs</h3>

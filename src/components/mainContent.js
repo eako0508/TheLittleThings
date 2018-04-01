@@ -1,7 +1,7 @@
 import React from 'react';
 import './mainContent.css';
 import { Avatar, Card, Icon } from 'antd';
-import { Row, Col } from 'react-bootstrap';
+//import { Row, Col } from 'react-bootstrap';
 const { Meta } = Card;
 
 export default class MainContent extends React.Component {
@@ -13,15 +13,12 @@ export default class MainContent extends React.Component {
 	}
 
 	handleClickEdit = (e) => {
-		//console.log("e");
-		//console.log(e);
 		if(e === 0){
 			this.props.onChangeMenu('EditPerson');
 		}
 		return false;
 	}
 	handleClickDot = (e) => {
-		//console.log(e);
 		return false;
 	}
 
@@ -36,20 +33,17 @@ export default class MainContent extends React.Component {
 					key={`card-${idx}`}
 					className='friendCards'
 					style={{ width: 240 }}
-
 					hoverable
 					cover={
 						item.url === ''
 						? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
 						: <img alt={`img-${idx}`} src={item.url} />
 					}
-
 					actions={
 						[
 						<a onClick={()=>this.handleClickEdit(idx)}>
 							<Icon type="edit" />
 						</a>
-
 						, <a onClick={()=>this.handleClickDot(idx)}>
 							<Icon type="ellipsis" />
 						</a>
@@ -57,7 +51,7 @@ export default class MainContent extends React.Component {
 					}
 					>
 						<Meta
-						title={item.name}
+						title={item.name.firstName}
 						description={item.description}
 						/>
 				</Card>
