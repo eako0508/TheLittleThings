@@ -38,59 +38,65 @@ export default class EditPerson extends React.Component {
 
 		return (
 			<Row className='preference'>
-				<Row>
-					<Col xs={10} xsOffset={1} md={4} mdOffset={4}>
+
+				<Col xs={10} xsOffset={1}>
 
 					<h3 className='block-center'>{this.props.editPersonData.info.name}</h3>
 					{/*<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>*/}
 					<Row>
-
-							{this.props.editPersonData.info.url === ''
-								? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
-								: <Image className='person-img' alt='img' src={this.props.editPersonData.info.url} responsive />}
+						<Col xs={12} sm={6} smOffset={3}>
+						{this.props.editPersonData.info.url === ''
+							? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
+							: <Image className='person-img' alt='img' src={this.props.editPersonData.info.url} responsive rounded />}
+						</Col>
 					</Row>
-					<p className='css-dob'>
-						Date of birth: {this.props.editPersonData.info.DOB}
+					<h4>Date of birth</h4>
+					<p>
+						{this.props.editPersonData.info.DOB}
 					</p>
-					</Col>
-				</Row>
-				<Divider />
-				<Row >
-					<h3>Likes</h3>
-					<List
-					dataSource={this.props.editPersonData.data.likes}
-					renderItem={item => (
-						<List.Item
-						actions={[<a>edit</a>, <a>remove</a>]}
-						>
-							{item}
-						</List.Item>
-					)}
-					/>
-					<AddToList onSubmitHandler={e=>this.onSubmitHandler('like', e)} />
+
+
 					<Divider />
 
-					<h3>Dislikes</h3>
-					<List
-					dataSource={this.props.editPersonData.data.dislikes}
-					renderItem={item => (
-						<List.Item
-						actions={[<a>edit</a>, <a>remove</a>]}
-						>
-							{item}
-						</List.Item>
-					)}
-					/>
-					<AddToList onSubmitHandler={e=>this.onSubmitHandler('dislike', e)} />
+					{/*<Col xs={10} xsOffset={1}>*/}
+						<h3>Likes</h3>
+						<List
+						dataSource={this.props.editPersonData.data.likes}
+						renderItem={item => (
+							<List.Item
+							actions={[<a>edit</a>, <a>remove</a>]}
+							>
+								{item}
+							</List.Item>
+						)}
+						/>
+						<AddToList onSubmitHandler={e=>this.onSubmitHandler('like', e)} />
+						<Divider />
 
-				</Row>
-				<Divider />
-				<h3>Questionnairs</h3>
-				<Row gutter={16}>
-					<Collapse>
-						{showQuestionnair}
-					</Collapse>
-				</Row>
+
+						<h3>Dislikes</h3>
+						<List
+						dataSource={this.props.editPersonData.data.dislikes}
+						renderItem={item => (
+							<List.Item
+							actions={[<a>edit</a>, <a>remove</a>]}
+							>
+								{item}
+							</List.Item>
+						)}
+						/>
+						<AddToList onSubmitHandler={e=>this.onSubmitHandler('dislike', e)} />
+						<Divider />
+
+						<h3>Questionnairs</h3>
+						<Collapse>
+							{showQuestionnair}
+						</Collapse>
+				</Col>
+
+
+
+
 
 			</Row>
 		);

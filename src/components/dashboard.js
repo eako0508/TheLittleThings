@@ -10,9 +10,10 @@ const { Content, Footer } = Layout;
 
 const editPersonData = {
 	info: {
+		id: 1,
 		name: 'Jessica',
 		DOB: 'March 17',
-		url:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+		url: './images/portraits/template_female_01.jpg'
 	},
 	data: {
 		likes: [
@@ -57,10 +58,10 @@ const addPersonData = {
 };
 const mainContentData = {
 	friends: [
-		{ name: 'Jessica', description: 'Cool girl', url:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'},
-		{ name: 'Josh', description: 'he\'s alright', url:'' },
-		{ name: 'Isaac', description: 'Small asian guy from office', url:'' },
-		{ name: 'Ryan', description: 'A guy from New Hampshire', url:'' }
+		{ name: 'Natalie', description: 'A girl from Maine', url: './images/portraits/template_female_01.jpg'},
+		{ name: 'Josh', description: 'he\'s alright', url: './images/portraits/template_male_01.jpg' },
+		{ name: 'Seohyun', description: 'Josh\'s step-daughter', url: './images/portraits/template_female_02.jpg' },
+		{ name: 'Ed Harris', description: 'The legendary Ed Harris', url: './images/portraits/template_male_02.jpg'}
 	]
 };
 
