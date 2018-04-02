@@ -4,3 +4,14 @@
 	width: 100%;
 	z-index: 10;
 }
+.search {
+	width: 150px;
+}
+
+.search-btn,
+.search-input {
+	width: 100%;
+}
+.navItems-container {
+	vertical-align: middle;
+}

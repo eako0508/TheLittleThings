@@ -30,30 +30,28 @@ export default class MainContent extends React.Component {
 			return (
 
 				<Card
-					key={`card-${idx}`}
-					className='friendCards'
-					style={{ width: 240 }}
-					hoverable
-					cover={
-						item.url === ''
-						? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
-						: <img alt={`img-${idx}`} src={item.url} />
-					}
-					actions={
-						[
-						<a onClick={()=>this.handleClickEdit(idx)}>
-							<Icon type="edit" />
-						</a>
-						, <a onClick={()=>this.handleClickDot(idx)}>
-							<Icon type="ellipsis" />
-						</a>
-						]
-					}
-					>
-						<Meta
-						title={item.name.firstName}
-						description={item.description}
-						/>
+				key={`card-${idx}`}
+				className='friendCards'
+				style={{ width: 240 }}
+				hoverable
+				cover={
+					item.url === ''
+					? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
+					: <img alt={`img-${idx}`} src={item.url} />
+				}
+				actions={[
+					<a onClick={()=>this.handleClickEdit(idx)}>
+						<Icon type="edit" />
+					</a>
+					, <a onClick={()=>this.handleClickDot(idx)}>
+						<Icon type="ellipsis" />
+					</a>
+				]}
+				>
+					<Meta
+					title={item.name.firstName}
+					description={item.description}
+					/>
 				</Card>
 
 			);
