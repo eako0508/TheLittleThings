@@ -60,13 +60,13 @@ const addPersonData = {
 };
 const mainContentData = {
 	friends: [
-		{ id: 1, name: {firstName: 'Natalie', lastName: 'Johnes'}, description: 'A girl from Maine', url: './images/portraits/template_female_01.jpg'},
+		{ id: 1, name: {firstName: 'Jessica', lastName: 'Johnes'}, description: 'A girl from Maine', url: './images/portraits/template_female_01.jpg'},
 		{ id: 2, name: {firstName: 'Josh', lastName: 'somelastname'}, description: 'he\'s alright', url: './images/portraits/template_male_01.jpg' },
-		{ id: 3, name: {firstName: 'Seohyun', lastName: 'Seo'}, description: 'Josh\'s step-daughter', url: './images/portraits/template_female_02.jpg' },
+		
 		{ id: 4, name: {firstName: 'Ed', lastName: 'Harris'}, description: 'The legendary Ed Harris', url: './images/portraits/template_male_02.jpg'}
 	]
 };
-
+//{ id: 3, name: {firstName: 'Seohyun', lastName: 'Seo'}, description: 'Josh\'s step-daughter', url: './images/portraits/template_female_02.jpg' },
 export default class Dashboard extends React.Component {
 	constructor(props){
 		super(props);
