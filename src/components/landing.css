@@ -17,15 +17,6 @@
 	min-height: 100vh;
 }
 
-.empty {
-	//margin-top: 10vh;
-}
-
-.empty:after{
-	content: '.';
-	visibility: hidden;
-}
-
 .message-container {
 	text-align: center;
 	//margin-top: 10vh;

@@ -58,12 +58,7 @@ export default class Landing extends React.Component {
 		return (
 			<div className='app'>
 				<Row >
-					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						{/*<Row>
-							<Col xsHidden='true'>
-								<div className='empty'/>
-							</Col>
-						</Row>*/}
+					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>						
 						<div className='main-col'>
 							<div className='message-container'>
 								<h3 className='Playfair'>The Little Things</h3>
