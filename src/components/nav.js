@@ -34,17 +34,15 @@ export default class NavBS extends React.Component{
 					</Navbar.Brand>
 					<Navbar.Toggle />
 				</Navbar.Header>
-				<Navbar.Collapse className='navItems-container'>
+				<Navbar.Collapse >
 					<Nav>
 						<NavItem>
 							<Input className='search-input'/>
-							
 						</NavItem>
 						<NavItem>
 							<Button type='submit' className='search-btn'>Search</Button>							
 						</NavItem>
 					</Nav>
-					
 					<Nav pullRight>
 						<NavItem eventKey={1} href="#" onClick={()=>this.menuClickHandler('1')}>
 						<Icon type="appstore" />
@@ -60,7 +58,6 @@ export default class NavBS extends React.Component{
 						</NavItem>
 					</Nav>
 				</Navbar.Collapse>
-
 			</Navbar>
 		);
 	}

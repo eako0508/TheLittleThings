@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginForm from './loginForm';
+import RegisterForm from './registerForm';
 import './landing.css';
 import { Button, Modal } from 'antd';
 import { Row, Col } from 'react-bootstrap';
@@ -15,7 +16,6 @@ export default class Landing extends React.Component {
 			loginVisible: true
 		});
 	}
-
 	handleLoginOk = (e) => {
 		e.stopPropagation();
 		console.log('OK');
@@ -76,15 +76,15 @@ export default class Landing extends React.Component {
 								onCancel={this.handleLoginCancel}
 								footer={null}
 								>
-									<LoginForm onClick={this.handleRegisterBtn} />
+									<LoginForm onClick={this.handleRegisterBtn} handleLoginCancel={this.handleLoginCancel} />
 								</Modal>
 								<Modal
 								title="Register"
 								visible={this.state.registerVisible}
 								onCancel={this.handleRegisterCancel}
 								footer={null}
-								>
-									<LoginForm onClick={this.handleRegisterBtn} />
+								>									
+									<RegisterForm onCancel={this.handleRegisterCancel}/>
 								</Modal>
 								<Button onClick={()=>window.location='/dashboard'}>Proceed</Button>
 							</div>
