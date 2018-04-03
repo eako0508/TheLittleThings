@@ -1,10 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './mainContent.css';
 import { Avatar, Card, Icon, Pagination } from 'antd';
 //import { Row, Col } from 'react-bootstrap';
 const { Meta } = Card;
 
-export default class MainContent extends React.Component {
+class MainContent extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
@@ -23,9 +24,10 @@ export default class MainContent extends React.Component {
 	}
 
 	render(){
-		console.log(this.props.mainContentData.friends);
+		//console.log(this.props.mainContentData.friends);
+		console.log(this.props.friends);
 
-		const displayCards = this.props.mainContentData.friends.map((item,idx)=>{
+		const displayCards = this.props.friends.map((item,idx)=>{
 
 			return (
 
@@ -67,3 +69,9 @@ export default class MainContent extends React.Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({	
+	friends: state.mainContent.friends
+});
+
+export default connect(mapStateToProps)(MainContent);

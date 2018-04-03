@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Form, Input, Button, DatePicker, Icon } from 'antd';
 import { Row, Col } from 'react-bootstrap';
 import Login_test from './login_test';
@@ -6,6 +7,15 @@ const FormItem = Form.Item;
 const { TextArea } = Input;
 
 let uuid = 0;
+
+	const questions_list = [
+		'What is your favorite local restaurant and the meal you most enjoy eating when there?',
+		'What\'s your favorite drink?',
+		'What songs have you completely memorized?',
+		'Are you usually early or late?',
+		'How do you relax after a hard day of work?',
+		'What\'s the farthest you’ve ever been from home?'
+	]
 
 class AddPerson extends React.Component {
 	constructor(props){
@@ -50,9 +60,11 @@ class AddPerson extends React.Component {
 	}
 	render(){
 		const { getFieldDecorator, getFieldValue } = this.props.form;
-		const questions = this.props.addPersonData.questions.map((item,idx)=>{
+		const questions = questions_list.map((item,idx)=>{
 			return <FormItem key={idx}>{item}<TextArea rows={4}/></FormItem>;
 		});
+		//const questions = this.props.questions;
+		console.log(this.props.questinos)
 		getFieldDecorator('keys', { initialValue: [] });
 		const keys = getFieldValue('keys');
 

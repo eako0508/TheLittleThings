@@ -1,13 +1,14 @@
 import React from 'react';
 import AddInput from './addInput';
 import SingleInputForm from './singleInputForm';
+import { connect } from 'react-redux';
 import './editPerson.css';
 import { List, Divider, Collapse, Avatar } from 'antd';
 import { Row, Col, Image } from 'react-bootstrap';
 
 const Panel = Collapse.Panel;
 
-export default class EditPerson extends React.Component {
+class EditPerson extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
@@ -25,7 +26,7 @@ export default class EditPerson extends React.Component {
 	}
 	render(){
 
-		const showQuestionnair = this.props.editPersonData.questionnair.map((item,idx)=>{
+		const showQuestionnair = this.props.questionnair.map((item,idx)=>{
 			return (
 				<Panel
 				header={item.q}
@@ -42,7 +43,7 @@ export default class EditPerson extends React.Component {
 
 				<Col xs={10} xsOffset={1}>
 
-					<h3 className='block-center'>{this.props.editPersonData.info.firstName}</h3>
+					<h3 className='block-center'>{this.props.info.firstName}</h3>
 					{/*<Avatar shape='square' size='large' icon='user' className='friendAvatar'/>*/}
 					{/*<Row>
 						<Col xs={12} sm={6} smOffset={3}>
@@ -53,7 +54,7 @@ export default class EditPerson extends React.Component {
 					</Row>*/}
 					<h4>Date of birth</h4>
 					<p>
-						{this.props.editPersonData.info.DOB}
+						{this.props.info.DOB}
 					</p>
 
 
@@ -62,7 +63,7 @@ export default class EditPerson extends React.Component {
 					{/*<Col xs={10} xsOffset={1}>*/}
 						<h3>Likes</h3>
 						<List
-						dataSource={this.props.editPersonData.data.likes}
+						dataSource={this.props.data.likes}
 						renderItem={item => (
 							<List.Item
 							actions={[<a>edit</a>, <a>remove</a>]}
@@ -83,7 +84,7 @@ export default class EditPerson extends React.Component {
 
 						<h3>Dislikes</h3>
 						<List
-						dataSource={this.props.editPersonData.data.dislikes}
+						dataSource={this.props.data.dislikes}
 						renderItem={item => (
 							<List.Item
 							actions={[<a>edit</a>, <a>remove</a>]}
@@ -103,12 +104,14 @@ export default class EditPerson extends React.Component {
 							{showQuestionnair}
 						</Collapse>
 				</Col>
-
-
-
-
-
 			</Row>
 		);
 	}
 }
+const mapStateToProps = state => ({	
+	questionnair: state.editPerson.questionnair,
+	info: state.editPerson.info,
+	data: state.editPerson.data
+})
+
+export default connect(mapStateToProps)(EditPerson);

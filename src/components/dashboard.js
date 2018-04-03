@@ -9,63 +9,6 @@ import { Layout, BackTop } from 'antd';
 
 const { Content, Footer } = Layout;
 
-const editPersonData = {
-	info: {
-		id: 1,
-		firstName: 'Natalie',
-		lastName: 'Johnes',
-		DOB: 'March 17',
-		url: './images/portraits/template_female_01.jpg'
-	},
-	data: {
-		likes: [
-			'cooking Italian food',
-			'shopping from Macy\'s',
-			'she likes to be recognized with her hard work and efforts',
-			'likes those who are kind to others'
-		],
-		dislikes: [
-			'She hates when people taker her food away without asking, like snacks',
-			'she doesn\'t like rude people'
-		]
-	},
-	questionnair: [
-		{
-			q:'What is your favorite local restaurant and the meal you most enjoy eating when there?',
-			a: 'There\'s a vietnamese restaurant in the flushing and I always eat Pho and summer roll from there every time I visit.'
-		},{
-			q: 'What\'s your favorite drink?',
-			a: 'Lately it\'s black coffee.'
-		},{
-			q: 'What songs have you completely memorized?',
-			a: 'Lot of songs from Seo Taiji from South Korea.'
-		},{
-			q: 'Are you usually early or late?',
-			a: 'I am an early bird at the beginning, but then ...'
-		},{
-			q: 'How do you relax after a hard day of work?',
-			a: 'I used to play computer games, or watch TV shows.'
-		}
-	]
-};
-const addPersonData = {
-	questions: [
-		'What is your favorite local restaurant and the meal you most enjoy eating when there?',
-		'What\'s your favorite drink?',
-		'What songs have you completely memorized?',
-		'Are you usually early or late?',
-		'How do you relax after a hard day of work?',
-		'What\'s the farthest you’ve ever been from home?'
-	]
-};
-const mainContentData = {
-	friends: [
-		{ id: 1, name: {firstName: 'Jessica', lastName: 'Johnes'}, description: 'A girl from Maine', url: './images/portraits/template_female_01.jpg'},
-		{ id: 2, name: {firstName: 'Josh', lastName: 'somelastname'}, description: 'he\'s alright', url: './images/portraits/template_male_01.jpg' },
-		
-		{ id: 4, name: {firstName: 'Ed', lastName: 'Harris'}, description: 'The legendary Ed Harris', url: './images/portraits/template_male_02.jpg'}
-	]
-};
 //{ id: 3, name: {firstName: 'Seohyun', lastName: 'Seo'}, description: 'Josh\'s step-daughter', url: './images/portraits/template_female_02.jpg' },
 export default class Dashboard extends React.Component {
 	constructor(props){
@@ -81,12 +24,12 @@ export default class Dashboard extends React.Component {
 	}
 	render(){
 		let onMainBody;
-		if(this.state.menu === 'MainContent'){
-			onMainBody = <MainContent mainContentData={mainContentData} onChangeMenu={menu=>this.onChangeMenu(menu)} />;
-		} else if(this.state.menu === 'EditPerson'){
-			onMainBody = <EditPerson editPersonData={editPersonData} onChangeMenu={menu=>this.onChangeMenu(menu)} />;
-		} else if(this.state.menu === 'AddPerson'){
-			onMainBody = <AddPerson addPersonData={addPersonData} onChangeMenu={menu=>this.onChangeMenu(menu)} />;
+		if(this.state.menu === 'MainContent'){			
+			onMainBody = <MainContent onChangeMenu={menu=>this.onChangeMenu(menu)} />;
+		} else if(this.state.menu === 'EditPerson'){			
+			onMainBody = <EditPerson onChangeMenu={menu=>this.onChangeMenu(menu)} />;
+		} else if(this.state.menu === 'AddPerson'){		
+			onMainBody = <AddPerson onChangeMenu={menu=>this.onChangeMenu(menu)} />;
 		}
 
 

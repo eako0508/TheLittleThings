@@ -1,8 +1,10 @@
 import {createStore, combineReducers} from 'redux';
-import loginReducer from './reducers/loginReducer';
+import MainContentReducer from './reducers/mainContentReducer';
+import EditPersonReducer from './reducers/editPersonReducer';
 
 export default createStore(
 	combineReducers({
-		login: loginReducer
+		mainContent: MainContentReducer,
+		editPerson: EditPersonReducer
 	})
 );
