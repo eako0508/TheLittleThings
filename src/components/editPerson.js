@@ -3,8 +3,8 @@ import AddInput from './addInput';
 import SingleInputForm from './singleInputForm';
 import { connect } from 'react-redux';
 import './editPerson.css';
-import { List, Divider, Collapse, Avatar } from 'antd';
-import { Row, Col, Image } from 'react-bootstrap';
+import { List, Divider, Collapse } from 'antd';
+import { Row, Col } from 'react-bootstrap';
 
 const Panel = Collapse.Panel;
 

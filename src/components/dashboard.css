@@ -12,7 +12,9 @@
 	margin: 70px 16px 0;
 }
 .body-footer {
+	margin-top: 50px;
 	text-align: center;
+	background: #e4e5e8;
 }
 .d-inline {
 	display: inline;

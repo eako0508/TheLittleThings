@@ -1,8 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Form, Input, Button, DatePicker, Icon } from 'antd';
 import { Row, Col } from 'react-bootstrap';
-import Login_test from './login_test';
 const FormItem = Form.Item;
 const { TextArea } = Input;
 

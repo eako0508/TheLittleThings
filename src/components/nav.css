@@ -10,8 +10,11 @@
 
 .search-btn,
 .search-input {
-	width: 100%;
+	width: 100%;	
 }
 .navItems-container {
 	vertical-align: middle;
+}
+.nav_item {
+	margin-top: 5px;	
 }

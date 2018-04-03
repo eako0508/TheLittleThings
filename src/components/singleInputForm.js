@@ -3,7 +3,6 @@ import './singleInputForm.css';
 import { Form, Input, Button } from 'antd';
 import { Row, Col } from 'react-bootstrap';
 const FormItem = Form.Item;
-const Search = Input.Search;
 
 class SingleInputForm extends React.Component {
 	constructor(props){

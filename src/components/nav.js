@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-	Navbar,
-	Nav,
-	NavItem,
-	FormGroup,	
-	FormControl,
-	InputGroup,
-	Row,
-	Col
-} from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Icon, Input, Button } from 'antd';
 
 import './nav.css';
@@ -26,8 +17,7 @@ export default class NavBS extends React.Component{
 	}
 	render(){
 		return (
-			<Navbar collapseOnSelect className='mainNavBar'>
-				
+			<Navbar collapseOnSelect className='mainNavBar'>				
 				<Navbar.Header>
 					<Navbar.Brand>
 						<a>The Little Things</a>
@@ -45,8 +35,10 @@ export default class NavBS extends React.Component{
 					</Nav>
 					<Nav pullRight>
 						<NavItem eventKey={1} href="#" onClick={()=>this.menuClickHandler('1')}>
-						<Icon type="appstore" />
+						<span className='nav_item'>
+						<Icon type="appstore" className='nav-icon' />
 						{' '}Dashboard
+						</span>
 						</NavItem>
 						<NavItem eventKey={2} href="#" onClick={()=>this.menuClickHandler('2')}>
 						<Icon type="user-add" /> 
