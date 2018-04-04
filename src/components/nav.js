@@ -27,10 +27,10 @@ export default class NavBS extends React.Component{
 				<Navbar.Collapse >
 					<Nav>
 						<NavItem>
-							<Input className='search-input'/>
+							<Input size='small' className='search-input'/>
 						</NavItem>
 						<NavItem>
-							<Button type='submit' className='search-btn'>Search</Button>							
+							<Button type='submit' size='small' className='search-btn'>Search</Button>							
 						</NavItem>
 					</Nav>
 					<Nav pullRight>
