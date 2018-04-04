@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Row, Col } from 'react-bootstrap';
 import { Icon, Input, Button } from 'antd';
 
 import './nav.css';
@@ -34,19 +34,50 @@ export default class NavBS extends React.Component{
 						</NavItem>
 					</Nav>
 					<Nav pullRight>
-						<NavItem eventKey={1} href="#" onClick={()=>this.menuClickHandler('1')}>
-						<span className='nav_item'>
-						<Icon type="appstore" className='nav-icon' />
-						{' '}Dashboard
-						</span>
+						<NavItem eventKey={1} href="#" onClick={()=>this.menuClickHandler('1')}>						
+							<Row>
+								<Col smHidden={true} >
+									<span className='nav_item'>
+									<Icon type="appstore" className='nav-icon' />
+									{' '}Dashboard
+									</span>
+								</Col>
+								<Col xsHidden={true} mdHidden={true} lgHidden={true}>
+									<span className='nav_item'>
+									<Icon type="appstore" className='nav-icon' />
+									</span>
+								</Col>
+							</Row>						
 						</NavItem>
 						<NavItem eventKey={2} href="#" onClick={()=>this.menuClickHandler('2')}>
-						<Icon type="user-add" /> 
-						{' '}Add Person
+						<Row>
+							<Col smHidden={true} >
+								<span className='nav_item'>
+								<Icon type="user-add" />
+								{' '}Add Person
+								</span>
+							</Col>
+							<Col xsHidden={true} mdHidden={true} lgHidden={true}>
+								<span className='nav_item'>
+								<Icon type="user-add" />
+								</span>
+							</Col>
+						</Row>						
 						</NavItem>
 						<NavItem eventKey={3} href="#" onClick={()=>this.menuClickHandler('3')}>
-						<Icon type="logout" /> 
-						{' '}Logout
+						<Row>
+							<Col smHidden={true} >
+								<span className='nav_item'>
+								<Icon type="logout" />
+								{' '}Logout
+								</span>
+							</Col>
+							<Col xsHidden={true} mdHidden={true} lgHidden={true}>
+								<span className='nav_item'>
+								<Icon type="logout" />
+								</span>
+							</Col>
+						</Row>						
 						</NavItem>
 					</Nav>
 				</Navbar.Collapse>
