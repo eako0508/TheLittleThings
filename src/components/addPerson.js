@@ -89,7 +89,7 @@ class AddPerson extends React.Component {
 		if(value && form.getFieldValue('DOB_day')===''){
 			callback('Day is empty!!!!');
 		} else{
-			callback(value);
+			callback();
 		}
 	}
 	dobCheckMonth = (rule, value, callback) => {
@@ -98,7 +98,7 @@ class AddPerson extends React.Component {
 		if(value && form.getFieldValue('DOB_month')===''){
 			callback('Day is empty!!!!');
 		} else{
-			callback(value);
+			callback();
 		}
 	}
 	render(){
@@ -155,7 +155,7 @@ class AddPerson extends React.Component {
 							message: "Please input passenger's name or delete this field.",
 						}]
 					})(
-						<Input placeholder='add dislikes' style={{ width: '60%', marginRight: 8 }} />
+						<Input placeholder='add dislikes' style={{ width: '80%', marginRight: 8 }} />
 					)}
 
 					{keys_d.length > 0 ? (
@@ -167,14 +167,31 @@ class AddPerson extends React.Component {
 				</FormItem>
 			);
 		});
-
-		return (			
+		
+		return (
 			<Row>
 				<Col xs={10} xsOffset={1}>					
 					<Form onSubmit={this.handleSubmit}>
-						<FormItem>
-							<h5>Name</h5>
-							<Input placeholder='Name' />
+						
+						
+						<FormItem label='First name'>
+						{getFieldDecorator('firstName',{
+							validateTrigger: ['onBlur', 'onChange'],
+							rules: [{
+								required: true,
+								whitespace: true,
+								message: 'First name is required...'
+							}]
+						})(<Input className='firstName' placeholder='First name' />)}
+						</FormItem>
+
+						<FormItem label='Last Name'>
+						{getFieldDecorator('lastName',{
+							validateTrigger: ['onBlur'],
+							rules: [{								
+								whitespace: true
+							}]
+						})(<Input className='lastName' placeholder='Last name' />)}
 						</FormItem>
 
 						<FormItem>
@@ -182,51 +199,63 @@ class AddPerson extends React.Component {
 							<TextArea rows={4} placeholder='Note' />
 						</FormItem>
 
-						{/*<FormItem label='Date of birth'>
+						<FormItem label='Date of birth'>
 							{getFieldDecorator('DOB', {	
 									validateTrigger: ['onBlur'],
 									rules: [{
-										whitespace: true
-									}, {
-										validator: this.dateFormatChecker
+										pattern: /^(1?9[5-9]|2?0[01])[0-9]\/(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])$/,
+										whitespace: true,
+										message: 'Please use YYYY/MM/DD format'
 									}]
 								})(<Input placeholder='YYYY/MM/DD' />)
 							}
-						</FormItem>*/}
-						<div className='dob-row'>
+						</FormItem>
 						
-							<h5>DOB</h5>
-							{'Month: '}
-							{getFieldDecorator('DOB_month', {
-									validateTrigger: ['onBlur'],
-									rules: [{
-										whitespace: true
-									}, {
-										validator: this.dobCheckMonth
-									}]
-								})(<InputNumber className='numInput' />)
-							}						
-							{'Day: '}
-							{getFieldDecorator('DOB_day', {
-									validateTrigger: ['onBlur'],
-									rules: [{
-										whitespace: true
-									}, {
-										validator: this.dobCheckDay
-									}]
-								})(<InputNumber className='numInput' />)
-							}
+						{/*<div className='dob-row'>
+							<Row>
+								<Col sm={12}>
+								<h5>Date of birth</h5>
+								</Col>								
+								<FormItem>
+									{'Month: '}
+									{getFieldDecorator('DOB_month', {
+											validateTrigger: ['onBlur'],
+											rules: [{
+												whitespace: true,
+												message: 'Month is empty'
+											}, {
+												validator: this.dobCheckMonth
+											}]
+										})(<InputNumber className='numInput' />)
+									}
+								</FormItem>
+								<FormItem>
+									{'Day: '}
+									{getFieldDecorator('DOB_day', {
+											validateTrigger: ['onBlur'],
+											rules: [{
+												whitespace: true,
+												message: 'Day is empty'
+											}, {
+												validator: this.dobCheckDay
+											}]
+										})(<InputNumber className='numInput' />)
+									}
+								</FormItem>
+								<FormItem>
+									{'Year: '}
+									{getFieldDecorator('DOB_year', {
+											validateTrigger: ['onBlur'],
+											rules: [{
+												whitespace: true,
+												message: 'Year is empty'
+											}]
+										})(<InputNumber className='numInput' />)
+									}
+								</FormItem>								
+							</Row>
+						</div>*/}
 						
-							{'Year: '}
-							{getFieldDecorator('DOB_year', {
-									validateTrigger: ['onBlur'],
-									rules: [{
-										whitespace: true
-									}]
-								})(<InputNumber className='numInput'/>)
-							}
-						
-						</div>
 
 						<div className='dob-row'>
 						<Row>							
@@ -251,7 +280,7 @@ class AddPerson extends React.Component {
 						</Row>
 						</div>
 						<FormItem>
-							<h5>Dislikes</h5>
+							<h5>Questions</h5>
 							{questions}
 						</FormItem>
 
