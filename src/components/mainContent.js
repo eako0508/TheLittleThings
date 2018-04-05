@@ -23,10 +23,7 @@ class MainContent extends React.Component {
 		return false;
 	}
 
-	render(){
-		//console.log(this.props.mainContentData.friends);
-		console.log(this.props.friends);
-
+	render(){		
 		const displayCards = this.props.friends.map((item,idx)=>{
 
 			return (
