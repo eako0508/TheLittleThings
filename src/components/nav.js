@@ -12,7 +12,7 @@ export default class NavBS extends React.Component{
 		} else if(e==='2'){
 			this.props.onChangeMenu('AddPerson');
 		} else if(e==='3'){
-			window.location = '/';
+			this.props.logoutHandler();
 		}
 	}
 	render(){

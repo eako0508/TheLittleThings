@@ -1,6 +1,5 @@
 import React from 'react';
 import MainContent from './mainContent';
-//import MainContent from './mainContent_test';
 import EditPerson from './editPerson';
 import AddPerson from './addPerson';
 import NavBS from './nav';
@@ -9,7 +8,6 @@ import { Layout, BackTop } from 'antd';
 
 const { Content, Footer } = Layout;
 
-//{ id: 3, name: {firstName: 'Seohyun', lastName: 'Seo'}, description: 'Josh\'s step-daughter', url: './images/portraits/template_female_02.jpg' },
 export default class Dashboard extends React.Component {
 	constructor(props){
 		super(props);
@@ -32,16 +30,13 @@ export default class Dashboard extends React.Component {
 			onMainBody = <AddPerson onChangeMenu={menu=>this.onChangeMenu(menu)} />;
 		}
 
-
 		return (
 			<Layout style={{ minHeight: '100vh'}}>
-				<NavBS  onChangeMenu={menu=>this.onChangeMenu(menu)} />
+				<NavBS onChangeMenu={menu=>this.onChangeMenu(menu)} logoutHandler={this.props.logoutHandler} />
 				<Layout>
 					{/*<Header className='body-header' />*/}
 					<Content className='body-content'>
-
 						{onMainBody}
-
 					</Content>
 					<Footer className='body-footer'>
 					The Little Things

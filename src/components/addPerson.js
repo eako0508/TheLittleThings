@@ -1,6 +1,6 @@
 import React from 'react';
 import './addPerson.css';
-import { Form, Input, Button, Icon, InputNumber } from 'antd';
+import { Form, Input, Button, Icon } from 'antd';
 import { Row, Col } from 'react-bootstrap';
 const FormItem = Form.Item;
 const { TextArea } = Input;
@@ -172,8 +172,6 @@ class AddPerson extends React.Component {
 			<Row>
 				<Col xs={10} xsOffset={1}>					
 					<Form onSubmit={this.handleSubmit}>
-						
-						
 						<FormItem label='First name'>
 						{getFieldDecorator('firstName',{
 							validateTrigger: ['onBlur', 'onChange'],

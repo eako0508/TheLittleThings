@@ -9,6 +9,13 @@ DOB
 questionnairs to see how well you know that person
 
 
+
+# TODOS
+
+
+
+
+
 Questionnaires:
 
 https://conversationstartersworld.com/questions-to-get-to-know-someone/

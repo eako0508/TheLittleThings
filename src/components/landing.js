@@ -86,7 +86,7 @@ export default class Landing extends React.Component {
 								>									
 									<RegisterForm onCancel={this.handleRegisterCancel}/>
 								</Modal>
-								<Button onClick={()=>window.location='/dashboard'}>Proceed</Button>
+								<Button onClick={this.props.loginHandler}>Skip Login</Button>
 							</div>
 						</div>
 					</Col>
