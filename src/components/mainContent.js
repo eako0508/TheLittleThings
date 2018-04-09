@@ -22,13 +22,18 @@ class MainContent extends React.Component {
 	handleClickDot = (e) => {
 		return false;
 	}
-
+	cardClick = (idx, e) => {		
+		if(idx === 0){
+			this.props.onChangeMenu('EditPerson');
+		}		
+	}
 	render(){		
 		const displayCards = this.props.friends.map((item,idx)=>{
 
 			return (
 
 				<Card
+				onClick={this.cardClick.bind(this, idx)}
 				key={`card-${idx}`}
 				className='friendCards'
 				style={{ width: 240 }}
@@ -38,14 +43,7 @@ class MainContent extends React.Component {
 					? <Avatar shape='square' size='large' icon='user' className='friendAvatar'/>
 					: <img alt={`img-${idx}`} src={item.url} />
 				}
-				actions={[
-					<a onClick={()=>this.handleClickEdit(idx)}>
-						<Icon type="edit" />
-					</a>
-					, <a onClick={()=>this.handleClickDot(idx)}>
-						<Icon type="ellipsis" />
-					</a>
-				]}
+				
 				>
 					<Meta
 					title={item.name.firstName}
@@ -72,3 +70,11 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(MainContent);
+/*actions={[
+					<a onClick={()=>this.handleClickEdit(idx)}>
+						<Icon type="edit" />
+					</a>
+					, <a onClick={()=>this.handleClickDot(idx)}>
+						<Icon type="ellipsis" />
+					</a>
+				]}*/

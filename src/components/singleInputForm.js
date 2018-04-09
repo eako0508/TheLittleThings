@@ -33,7 +33,7 @@ class SingleInputForm extends React.Component {
 							<Input placeholder='add a thing' className='input' />
 						</Col>
 						<Col xs={12} sm={2}>
-							<Button type='primary' htmlType='submit' className='form-btn'>add</Button>
+							<Button type='primary' htmlType='submit' className='form-btn'>ADD</Button>
 						</Col>
 					</Row>
 					)}

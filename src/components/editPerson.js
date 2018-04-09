@@ -93,10 +93,11 @@ class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-						<AddInput
+						<SingleInputForm />
+						{/*<AddInput
 						onSubmitHandler={e=>this.onSubmitHandler('dislike', e)}
 						info={{placeholder: 'things to add', btnTitle:'Add'}}
-						/>
+						/>*/}
 						<Divider />
 
 						<h3>Questionnairs</h3>
