@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Input } from 'antd';
-//import { FormGroup, InputGroup, FormControl, Button as ButtonBS } from 'react-bootstrap';
 const FormItem = Form.Item;
 const Search = Input.Search;
 
@@ -30,25 +29,3 @@ export default class AddInput extends React.Component {
 		);
 	}
 }
-
-/*
-	render(){
-		return (
-			<form onSubmit={this.extractString}>
-				<FormGroup>
-					<InputGroup>
-						<FormControl type='text' />
-						<InputGroup.Button>
-							<ButtonBS
-							bsStyle='primary'
-							type='submit'
-							>
-								Add
-							</ButtonBS>
-						</InputGroup.Button>
-					</InputGroup>
-				</FormGroup>
-			</form>
-		);
-	}
-	*/

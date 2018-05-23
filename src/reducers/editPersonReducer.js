@@ -16,6 +16,18 @@ const initState = {
 		dislikes: [
 			'She hates when people taker her food away without asking, like snacks',
 			'she doesn\'t like rude people'
+		],
+		notes: [
+			'cooking Italian food',
+			'shopping from Macy\'s',
+			'she likes to be recognized with her hard work and efforts',
+			'likes those who are kind to others',
+			'She hates when people taker her food away without asking, like snacks',
+			'she doesn\'t like rude people'
+		],
+		events: [
+			'start working for a new company from June 1',
+			'parents visiting on May 20th'
 		]
 	},
 	questionnair: [

@@ -48,5 +48,3 @@ class NormalLoginForm extends React.Component {
 }
 
 export default  Form.create()(NormalLoginForm);
-
-//ReactDOM.render(<WrappedNormalLoginForm />, mountNode);

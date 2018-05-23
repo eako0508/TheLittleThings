@@ -60,8 +60,8 @@ class EditPerson extends React.Component {
 
 					<Divider />
 
-					{/*<Col xs={10} xsOffset={1}>*/}
-						<h3>Likes</h3>
+					
+						{/*<h3>Likes</h3>
 						<List
 						dataSource={this.props.data.likes}
 						renderItem={item => (
@@ -72,11 +72,6 @@ class EditPerson extends React.Component {
 							</List.Item>
 						)}
 						/>
-
-						{/*<AddInput
-						onSubmitHandler={e=>this.onSubmitHandler('like', e)}
-						info={{placeholder: 'things to add', btnTitle:'Add'}}
-						/>*/}
 						<SingleInputForm />
 
 						<Divider />
@@ -94,16 +89,45 @@ class EditPerson extends React.Component {
 						)}
 						/>
 						<SingleInputForm />
-						{/*<AddInput
-						onSubmitHandler={e=>this.onSubmitHandler('dislike', e)}
-						info={{placeholder: 'things to add', btnTitle:'Add'}}
-						/>*/}
+
+						<Divider />*/}
+
+						<h3>Notes</h3>
+						<SingleInputForm />
+						<List
+						dataSource={this.props.data.notes}
+						renderItem={item => (
+							<List.Item
+							actions={[<a>edit</a>, <a>remove</a>]}
+							>
+								{item}
+							</List.Item>
+						)}
+						/>
+						
+
 						<Divider />
+
+						<h3>Events</h3>
+						<SingleInputForm />
+						<List
+						dataSource={this.props.data.events}
+						renderItem={item => (
+							<List.Item
+							actions={[<a>edit</a>, <a>remove</a>]}
+							>
+								{item}
+							</List.Item>
+						)}
+						/>
+						
+
+						{/*<Divider />
 
 						<h3>Questionnairs</h3>
 						<Collapse>
 							{showQuestionnair}
-						</Collapse>
+						</Collapse>*/}
 				</Col>
 			</Row>
 		);

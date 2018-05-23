@@ -158,6 +158,10 @@ class AddPerson extends React.Component {
 			);
 		});
 		
+
+
+
+
 		return (
 			<Row>
 				<Col xs={10} xsOffset={1}>					
@@ -199,7 +203,7 @@ class AddPerson extends React.Component {
 							}
 						</FormItem>
 						
-						<div className='dob-row'>
+						{/*<div className='dob-row'>
 						<Row>							
 							<Col xs={12} md={8}>
 								<h5>Likes</h5>
@@ -210,6 +214,7 @@ class AddPerson extends React.Component {
 							</Col>
 						</Row>
 						</div>
+						
 						<div className='dob-row'>
 						<Row>							
 							<Col xs={12} md={8}>
@@ -220,15 +225,18 @@ class AddPerson extends React.Component {
 								</Button>
 							</Col>
 						</Row>
-						</div>
-						<FormItem>
+						</div>*/}
+
+
+						{/*<FormItem>
 							<h5>Questions</h5>
 							{questions}
 						</FormItem>
 
 						<FormItem>
 							<Button type='primary' htmlType='submit'>Submit</Button>
-						</FormItem>
+						</FormItem>*/}
+
 					</Form>
 				</Col>
 			</Row>
