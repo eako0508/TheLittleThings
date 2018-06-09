@@ -2,9 +2,11 @@ import React from 'react';
 import MainContent from './mainContent';
 import EditPerson from './editPerson';
 import AddPerson from './addPerson';
+import AddThings from './addThings';
 import NavBS from './nav';
 import './dashboard.css';
 import { Layout, BackTop } from 'antd';
+import { Row, Col } from 'react-bootstrap';
 
 const { Content, Footer } = Layout;
 
@@ -28,6 +30,8 @@ export default class Dashboard extends React.Component {
 			onMainBody = <EditPerson onChangeMenu={menu=>this.onChangeMenu(menu)} />;
 		} else if(this.state.menu === 'AddPerson'){		
 			onMainBody = <AddPerson onChangeMenu={menu=>this.onChangeMenu(menu)} />;
+		} else if(this.state.menu === 'AddThings'){
+			onMainBody = <AddThings onChangeMenu={menu=>this.onChangeMenu(menu)} />;
 		}
 
 		return (
@@ -38,9 +42,13 @@ export default class Dashboard extends React.Component {
 					<Content className='body-content'>
 						{onMainBody}
 					</Content>
-					<Footer className='body-footer'>
-					The Little Things
-					</Footer>
+					<Row>
+						<Col xsHidden={true}>
+							<Footer className='body-footer'>
+							The Little Things
+							</Footer>
+						</Col>
+					</Row>
 					<BackTop />
 				</Layout>
 			</Layout>

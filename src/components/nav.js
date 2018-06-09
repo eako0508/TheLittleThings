@@ -10,8 +10,10 @@ export default class NavBS extends React.Component{
 		if(e==='1'){
 			this.props.onChangeMenu('MainContent');
 		} else if(e==='2'){
-			this.props.onChangeMenu('AddPerson');
+			this.props.onChangeMenu('AddThings');
 		} else if(e==='3'){
+			this.props.onChangeMenu('AddPerson');
+		} else if(e==='4'){
 			this.props.logoutHandler();
 		}
 	}
@@ -53,6 +55,21 @@ export default class NavBS extends React.Component{
 						<Row>
 							<Col smHidden={true} >
 								<span className='nav_item'>
+								<Icon type="plus-circle-o" />
+								{' '}Add a thing
+								</span>
+							</Col>
+							<Col xsHidden={true} mdHidden={true} lgHidden={true}>
+								<span className='nav_item'>
+								<Icon type="plus-circle-o" />
+								</span>
+							</Col>
+						</Row>
+						</NavItem>
+						<NavItem eventKey={3} href="#" onClick={()=>this.menuClickHandler('3')}>
+						<Row>
+							<Col smHidden={true} >
+								<span className='nav_item'>
 								<Icon type="user-add" />
 								{' '}Add Person
 								</span>
@@ -62,9 +79,9 @@ export default class NavBS extends React.Component{
 								<Icon type="user-add" />
 								</span>
 							</Col>
-						</Row>						
+						</Row>
 						</NavItem>
-						<NavItem eventKey={3} href="#" onClick={()=>this.menuClickHandler('3')}>
+						<NavItem eventKey={4} href="#" onClick={()=>this.menuClickHandler('3')}>
 						<Row>
 							<Col smHidden={true} >
 								<span className='nav_item'>
